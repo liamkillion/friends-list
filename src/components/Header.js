@@ -1,13 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
 class Header extends React.Component {
-  render () {
-    return(
+  render() {
+    return (
       <div className="header">
-        <h1>Welcome, "%{this.props.userName}"</h1>
+        <h1>Welcome, {this.props.userName}</h1>
       </div>
-    )
+    );
   }
 }
 
