@@ -3,23 +3,24 @@ import PropTypes from 'prop-types'
 
 class FriendLineItem extends React.Component {
   render() {
-    const nextHang = new Date(this.props.friend.lastDateSeen) + this.props.friend.desiredFrequency
+     // broken, look at moment JS (written as a string currently)
+    const nextHang = new Date(this.props.friend.lastDateSeen) + new Date(this.props.friend.desiredFrequency)
     return ( <
-      ol >
-      <
-      li > {
+      ul >
+      <p > {
         this.props.friend.name
-      } < /li> <
-      li > You should schedule something with them by: {
-        this.nextHang
-      } < /li> <
-      li > Suggested plans: {
+      } < /p>
+      <li > You should schedule something with them by: {
+        nextHang
+      } < /li>
+
+      <li > Suggested plans: {
         this.props.friend.name
-      }
-      likes {
+      }  {
         this.props.friend.notes
-      } < /li> < /
-      ol >
+      } < /li>  < /
+      ul >
+      // <ReminderList lastDateSeen & desiredFrequency
     )
   }
 }
