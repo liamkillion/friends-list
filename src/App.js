@@ -13,33 +13,37 @@ class App extends Component {
         friends: [
           {
             name: "Rebs",
-            lastDateSeen: "9/23/2018",
+            lastDateSeen: new Date(9/23/2018),
             desiredFrequency: 14,
-            notes: "Likes concerts"
+            notes: "Likes concerts",
+            hangHistory:[{"date": new Date(1/1/2018),"activity":"Went to the zoo"}]
           },
           {
             name: "Dana",
-            lastDateSeen: "9/12/2018",
+            lastDateSeen: new Date(9/23/2018),
             desiredFrequency: 21,
-            notes: "Likes going out to eat"
+            notes: "Likes going out to eat",
+            hangHistory:[{"date": new Date(1/1/2018),"activity":"Went to the zoo"}]
           },
           {
             name: "Todd",
-            lastDateSeen: "9/15/2018",
+            lastDateSeen: new Date(9/23/2018),
             desiredFrequency: 7,
-            notes: "Likes riding bikes"
+            notes: "Likes riding bikes",
+            hangHistory:[{"date": new Date(1/1/2018),"activity":"Went to the zoo"}]
           },
           {
             name: "Liz",
-            lastDateSeen: "8/21/2018",
+            lastDateSeen: new Date(9/23/2018),
             desiredFrequency: 11,
             notes: "Likes going to bars"
           },
           {
             name: "Sebastian",
-            lastDateSeen: "8/28/2018",
+            lastDateSeen: new Date(9/23/2018),
             desiredFrequency: 11,
-            notes: "Likes playing videogames"
+            notes: "Likes playing videogames",
+            hangHistory:[{"date": new Date(1/1/2018),"activity":"Went to the zoo"}]
           }
         ]
       }

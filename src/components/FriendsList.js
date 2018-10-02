@@ -9,7 +9,7 @@ class FriendsList extends React.Component {
         <FriendLineItem friend={friend} />
       </li>;
     });
-    return <ul className="friendsList">{friendsList}</ul>;
+    return (<ul className="friendsList">{friendsList}</ul>);
   }
 }
 
