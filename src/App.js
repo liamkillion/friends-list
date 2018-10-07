@@ -53,7 +53,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
+      <div className="app container">
         <Header userName={this.state.user.userName} />
         <FriendsListContainer friends={this.state.user.friends}/>
       </div>

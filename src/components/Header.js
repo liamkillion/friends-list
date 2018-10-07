@@ -4,9 +4,10 @@ import PropTypes from "prop-types";
 class Header extends React.Component {
   render() {
     return (
-      <div className="header">
-        <h1>Welcome, {this.props.userName}</h1>
-      </div>
+      <nav className="navbar navbar-light bg-light">
+        <span className="navbar-brand mb-0 h1">Remind Me to See my Friends</span>
+        <span className="navbar-text">Welcome, {this.props.userName}</span>
+      </nav>
     );
   }
 }
