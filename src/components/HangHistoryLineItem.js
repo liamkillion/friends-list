@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 class HangHistoryListItem extends React.Component {
   render() {
     return (
-      <ul>
-        <li>Date: {this.props.hang.date}</li>
-        <li>Activity: {this.props.hang.activity}</li>
-      </ul>
+      <li className="list-group-item">
+        <p>Date: {this.props.hang.date}</p>
+        <p>Activity: {this.props.hang.activity}</p>
+      </li>
     )
   }
 }

@@ -17,13 +17,17 @@ class FriendLineItem extends React.Component {
 
 
     return (
-      <ul>
-        <p> {this.props.friend.name} </p>
-        <li> You should schedule something with them by: {nextHang} </li>
-        <li> Suggested plans: {this.props.friend.name}  {this.props.friend.notes} </li>
-        <li>Recent Hangs with {this.props.friend.name}:</li>
-        <HangHistoryContainer hangHistory={this.props.friend.hangHistory}/>
-      </ul>
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title"> {this.props.friend.name} </h5>
+          <p className="card-text"> You should schedule something with them by: {nextHang} </p>
+          <p className="card-text"> Suggested plans: {this.props.friend.name}  {this.props.friend.notes} </p>
+          <p className="card-text">Recent Hangs with {this.props.friend.name}:</p>
+        </div>
+        <div className="card-footer">
+          <HangHistoryContainer hangHistory={this.props.friend.hangHistory}/>
+        </div>
+      </div>
     )
   }
 }

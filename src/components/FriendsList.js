@@ -5,11 +5,13 @@ import FriendLineItem from "./FriendLineItem.js";
 class FriendsList extends React.Component {
   render() {
     const friendsList = this.props.friends.map(friend => {
-      return <li>
-        <FriendLineItem friend={friend} />
-      </li>;
+      return (<FriendLineItem friend={friend} />);
     });
-    return (<ul className="friendsList">{friendsList}</ul>);
+    return (
+      <div className="friendsList">
+        {friendsList}
+      </div>
+    );
   }
 }
 

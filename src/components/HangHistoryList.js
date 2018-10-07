@@ -5,11 +5,9 @@ import HangHistoryLineItem from './HangHistoryLineItem.js'
 class HangHistoryList extends React.Component {
   render() {
     const hangList = this.props.hangHistory.map(hang => {
-      return <li>
-        <HangHistoryLineItem hang={hang} />
-      </li>;
+      return <HangHistoryLineItem hang={hang} />
     });
-    return (<ul className="hangList">{hangList}</ul>);
+    return (<ul className="hangList list-group">{hangList}</ul>);
   }
 }
 
