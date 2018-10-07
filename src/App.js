@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "./components/Header.js";
-import FriendsList from "./components/FriendsList.js";
+import FriendsList from "./containers/FriendsListContainer.js";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -36,7 +36,8 @@ class App extends Component {
             name: "Liz",
             lastDateSeen: new Date(9/23/2018),
             desiredFrequency: 11,
-            notes: "Likes going to bars"
+            notes: "Likes going to bars",
+            hangHistory:[{"date": new Date(1/1/2018),"activity":"Went to the zoo"}]
           },
           {
             name: "Sebastian",
@@ -54,7 +55,7 @@ class App extends Component {
     return (
       <div className="app">
         <Header userName={this.state.user.userName} />
-        <FriendsList userFriends={this.state.user.friends} />
+        <FriendsListContainer friends={this.state.user.friends}/>
       </div>
     );
   }

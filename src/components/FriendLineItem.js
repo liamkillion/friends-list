@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 class FriendLineItem extends React.Component {
   render() {
      // broken, look at moment JS (written as a string currently)
-
     var lastHang = this.props.friend.lastDateSeen
     var numberOfDaysToAdd = this.props.friend.desiredFrequency;
     lastHang.setDate(lastHang.getDate() + numberOfDaysToAdd)
@@ -19,7 +18,7 @@ class FriendLineItem extends React.Component {
         <p> {this.props.friend.name} </p>
         <li> You should schedule something with them by: {nextHang} </li>
         <li> Suggested plans: {this.props.friend.name}  {this.props.friend.notes} </li>
-        <HangHistory />        
+        <HangHistoryContainer hangHistory={hang.props.friend.hangHistory}/>
       </ul>
     )
   }

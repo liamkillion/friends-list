@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import HangHistoryListItem from ',/HangHistoryListItem.js'
 
-class HangHistory extends React.Component {
+class HangHistoryList extends React.Component {
   render() {
-    const hangList = this.props.userFriends.map(hang => {
+    const hangList = this.props.hangHistory.map(hang => {
       return <li>
         <HangLineItem hang={hang} />
       </li>;
@@ -13,4 +13,4 @@ class HangHistory extends React.Component {
   }
 }
 
-export default HangHistory;
+export default HangHistoryList;

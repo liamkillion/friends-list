@@ -4,7 +4,7 @@ import FriendLineItem from "./FriendLineItem.js";
 
 class FriendsList extends React.Component {
   render() {
-    const friendsList = this.props.userFriends.map(friend => {
+    const friendsList = this.props.friends.map(friend => {
       return <li>
         <FriendLineItem friend={friend} />
       </li>;
