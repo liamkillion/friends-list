@@ -52,10 +52,14 @@ class App extends Component {
   }
 
   render() {
+    handleNewFriend = ()=>{
+      
+    }
     return (
       <div className="app container">
         <Header userName={this.state.user.userName} />
         <FriendsListContainer friends={this.state.user.friends}/>
+        <NewFriendContainer />
       </div>
     );
   }
