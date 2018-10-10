@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "./components/Header.js";
 import FriendsListContainer from "./containers/FriendsListContainer.js";
+import NewFriendContainer from "./containers/NewFriendContainer.js"
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -51,15 +52,22 @@ class App extends Component {
     };
   }
 
+  handleCreateFriend = friend => {
+    let currentFriends=this.state.user.friends
+    this.setState( { user: {
+                    friends: [...currentFriends,friend]
+                  }
+                }
+              )
+    console.log(this.state.user.friends)
+  }
+
   render() {
-    handleNewFriend = ()=>{
-      
-    }
     return (
       <div className="app container">
         <Header userName={this.state.user.userName} />
-        <FriendsListContainer friends={this.state.user.friends}/>
-        <NewFriendContainer />
+        <FriendsListContainer friends={this.state.user.friends} />
+        <NewFriendContainer handleCreateFriend={this.handleCreateFriend}/>
       </div>
     );
   }
