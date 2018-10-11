@@ -53,9 +53,8 @@ class App extends Component {
   }
 
   handleCreateFriend = friend => {
-    let currentFriends=this.state.user.friends
     this.setState( { user: {
-                    friends: [...currentFriends,friend]
+                    friends: [friend,...this.state.user.friends]
                   }
                 }
               )

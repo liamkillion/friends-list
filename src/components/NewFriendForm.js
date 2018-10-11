@@ -37,7 +37,7 @@ class NewFriendForm extends React.Component {
         <label className="sr-only" for="likesDislikes">Likes/Dislikes</label>
         <input onChange={this.handleChange} type="text" className="form-control" name="likesDislikes" placeholder="Friend's Likes/Dislikes"></input>
 
-        <button type="submit" className="btn btn-primary" onClick={this.props.handleSubmit}>Submit</button>
+        <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
       </form>
     )
   }
