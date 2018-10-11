@@ -8,7 +8,8 @@ class NewFriendForm extends React.Component {
       name:"",
       frequency:"",
       lastSeen:"",
-      likesDislikes:""
+      likesDislikes:"",
+      hangHistory: ""
     }
   }
 
@@ -36,6 +37,8 @@ class NewFriendForm extends React.Component {
 
         <label className="sr-only" for="likesDislikes">Likes/Dislikes</label>
         <input onChange={this.handleChange} type="text" className="form-control" name="likesDislikes" placeholder="Friend's Likes/Dislikes"></input>
+
+        <input onChange={this.handleChange} type="hidden" className="form-control" name="likesDislikes" placeholder="Friend's Likes/Dislikes"></input>
 
         <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
       </form>
