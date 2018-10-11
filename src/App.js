@@ -58,14 +58,23 @@ class App extends Component {
                   }
                 }
               )
-    console.log(this.state.user.friends)
+  }
+
+  handleCreateHang = (hangDetails) => {
+    let friends = this.state.friends
+    debugger
+    friends.forEach(friend=>{
+      if (friend.name===hangDetails.friendName){
+        friend['hangHistory']=[{'date':hangDetails.date,'activity':hangDetails.activity}]
+      }
+    })
   }
 
   render() {
     return (
       <div className="app container">
         <Header userName={this.state.user.userName} />
-        <FriendsListContainer friends={this.state.user.friends} />
+        <FriendsListContainer handleCreateHang={this.handleCreateHang} friends={this.state.user.friends} />
         <NewFriendContainer handleCreateFriend={this.handleCreateFriend}/>
       </div>
     );

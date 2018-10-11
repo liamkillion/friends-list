@@ -5,7 +5,7 @@ import FriendLineItem from "./FriendLineItem.js";
 class FriendsList extends React.Component {
   render() {
     const friendsList = this.props.friends.map(friend => {
-      return (<FriendLineItem friend={friend} />);
+      return (<FriendLineItem friend={friend} handleCreateHang={this.props.handleCreateHang}  />);
     });
     return (
       <div className="friendsList">

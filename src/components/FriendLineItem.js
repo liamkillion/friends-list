@@ -25,7 +25,7 @@ class FriendLineItem extends React.Component {
           <p className="card-text">Recent Hangs with {this.props.friend.name}:</p>
         </div>
         <div className="card-footer">
-          <HangHistoryContainer hangHistory={this.props.friend.hangHistory}/>
+          <HangHistoryContainer handleCreateHang={this.props.handleCreateHang} friend={this.props.friend}/>
         </div>
       </div>
     )
