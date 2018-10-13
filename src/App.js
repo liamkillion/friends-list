@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "./components/Header.js";
-import FriendsListContainer from "./containers/FriendsListContainer.js";
+import FriendsList from "./components/FriendsList.js";
 import NewFriendContainer from "./containers/NewFriendContainer.js"
 import logo from "./logo.svg";
 import "./App.css";
@@ -17,7 +17,7 @@ class App extends Component {
             lastDateSeen: "9/23/2018",
             desiredFrequency: 14,
             notes: "likes concerts",
-            hangHistory:[{"date": "9/23/2018","activity":"Went to the zoo"}]
+            hangHistory:[{"date": "9/23/2018","activity":"Went to the zoo","didHang": true}]
           },
           {
             id:2,
@@ -25,7 +25,7 @@ class App extends Component {
             lastDateSeen: "9/23/2018",
             desiredFrequency: 21,
             notes: "likes going out to eat",
-            hangHistory:[{"date": "9/23/2018","activity":"Went to the zoo"}]
+            hangHistory:[{"date": "9/23/2018","activity":"Went to the zoo","didHang": true}]
           },
           {
             id:3,
@@ -33,7 +33,7 @@ class App extends Component {
             lastDateSeen: "9/23/2018",
             desiredFrequency: 7,
             notes: "likes riding bikes",
-            hangHistory:[{"date": "9/23/2018","activity":"Went to the zoo"}]
+            hangHistory:[{"date": "9/23/2018","activity":"Went to the zoo","didHang": true}]
           },
           {
             id:4,
@@ -41,7 +41,7 @@ class App extends Component {
             lastDateSeen: "9/23/2018",
             desiredFrequency: 11,
             notes: "likes going to bars",
-            hangHistory:[{"date": "9/23/2018","activity":"Went to the zoo"}]
+            hangHistory:[{"date": "9/23/2018","activity":"Went to the zoo","didHang": true}]
           },
           {
             id:5,
@@ -49,7 +49,7 @@ class App extends Component {
             lastDateSeen: "9/23/2018",
             desiredFrequency: 11,
             notes: "likes playing videogames",
-            hangHistory:[{"date": "9/23/2018","activity":"Went to the zoo"}]
+            hangHistory:[{"date": "9/23/2018","activity":"Went to the zoo","didHang": true}]
           }
         ]
     };
@@ -76,7 +76,7 @@ class App extends Component {
     return (
       <div className="app container">
         <Header userName={this.state.userName} />
-        <FriendsListContainer handleCreateHang={this.handleCreateHang} friends={this.state.friends} />
+        <FriendsList handleCreateHang={this.handleCreateHang} friends={this.state.friends} />
         <NewFriendContainer handleCreateFriend={this.handleCreateFriend}/>
       </div>
     );

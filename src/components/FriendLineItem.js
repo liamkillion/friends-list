@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import HangHistoryContainer from '../containers/HangHistoryContainer.js'
+import HangHistoryList from '../components/HangHistoryList.js'
 
 class FriendLineItem extends React.Component {
   render() {
@@ -25,7 +25,7 @@ class FriendLineItem extends React.Component {
           <p className="card-text">Recent Hangs with {this.props.friend.name}:</p>
         </div>
         <div className="card-footer">
-          <HangHistoryContainer handleCreateHang={this.props.handleCreateHang} friend={this.props.friend}/>
+          <HangHistoryList handleCreateHang={this.props.handleCreateHang} friend={this.props.friend}/>
         </div>
       </div>
     )
