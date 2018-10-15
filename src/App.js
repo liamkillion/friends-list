@@ -57,8 +57,8 @@ class App extends Component {
   state={friends:[]}
   componentDidMount(){
     if (true){
-      services.friends.getFriends().then(friends=>{
-      this.setState({friends})
+      services.friends.getFriends().then(response=>{
+      this.setState({friends:response})
     })
     }
   }
