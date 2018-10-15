@@ -1,4 +1,4 @@
-const API_ROOT="http://localhost:3000/api/vi"
+const API_ROOT="http://localhost:3000/api/v1"
 
 const getHeaders = () => {
   return {
@@ -27,7 +27,7 @@ const createNewFriend = newFriend => {
   }).then(res => res.json());
 };
 
-const editFriend = friendId,friendAttributesToUpdate => {
+const editFriend = (friendId,friendAttributesToUpdate) => {
   return fetch(`${API_ROOT}/entries/${friendId}`, {
     method: "PATCH",
     headers: getHeaders(),
@@ -62,7 +62,7 @@ const createNewHang = newHang => {
   }).then(res => res.json());
 };
 
-const editHang = hangId,hangAttributesToUpdate => {
+const editHang = (hangId,hangAttributesToUpdate) => {
   return fetch(`${API_ROOT}/entries/${hangId}`, {
     method: "PATCH",
     headers: getHeaders(),
