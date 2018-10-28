@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 class HangHistoryListItem extends React.Component {
   render() {
-
+    debugger
     return (
       <li className="list-group-item">
         <p>Date: {this.props.hang.date}</p>

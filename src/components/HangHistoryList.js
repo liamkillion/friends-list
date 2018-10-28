@@ -5,7 +5,8 @@ import NewHangForm from './NewHangForm.js'
 
 class HangHistoryList extends React.Component {
   render() {
-    const hangList = this.props.friend.hangHistory.map(hang => {
+    debugger
+    const hangList = this.props.friend.data.relationships.hangs.data.map(hang => {
       return <HangHistoryLineItem hang={hang} />
     });
     return (

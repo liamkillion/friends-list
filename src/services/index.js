@@ -8,19 +8,19 @@ const getHeaders = () => {
 }
 
 const getFriends = () => {
-  return fetch(`${API_ROOT}/hangs`, {
+  return fetch(`${API_ROOT}/friends`, {
     headers: getHeaders()
   }).then(res => res.json());
 };
 
 const getFriend = friendId => {
-  return fetch(`${API_ROOT}/friend/${friendId}`, {
+  return fetch(`${API_ROOT}/friends/${friendId}`, {
     headers: getHeaders()
   }).then(res => res.json());
 };
 
 const createNewFriend = newFriend => {
-  return fetch(`${API_ROOT}/entries`, {
+  return fetch(`${API_ROOT}/friends`, {
     method: "POST",
     headers: getHeaders(),
     body: JSON.stringify({ friend: newFriend })
@@ -28,7 +28,7 @@ const createNewFriend = newFriend => {
 };
 
 const editFriend = (friendId,friendAttributesToUpdate) => {
-  return fetch(`${API_ROOT}/entries/${friendId}`, {
+  return fetch(`${API_ROOT}/friends/${friendId}`, {
     method: "PATCH",
     headers: getHeaders(),
     body: JSON.stringify(friendAttributesToUpdate)
@@ -36,7 +36,7 @@ const editFriend = (friendId,friendAttributesToUpdate) => {
 }
 
 const deleteFriend = friendId => {
-  return fetch(`${API_ROOT}/entries/${friendId}`, {
+  return fetch(`${API_ROOT}/friends/${friendId}`, {
     method: "DELETE",
     headers: getHeaders()
   }).then(res => res.json());
@@ -49,13 +49,13 @@ const getHangs = () => {
 };
 
 const getHang = hangId => {
-  return fetch(`${API_ROOT}/hang/${hangId}`, {
+  return fetch(`${API_ROOT}/hangs/${hangId}`, {
     headers: getHeaders()
   }).then(res => res.json());
 };
 
 const createNewHang = newHang => {
-  return fetch(`${API_ROOT}/entries`, {
+  return fetch(`${API_ROOT}/hangs`, {
     method: "POST",
     headers: getHeaders(),
     body: JSON.stringify({ hang: newHang })
@@ -63,7 +63,7 @@ const createNewHang = newHang => {
 };
 
 const editHang = (hangId,hangAttributesToUpdate) => {
-  return fetch(`${API_ROOT}/entries/${hangId}`, {
+  return fetch(`${API_ROOT}/hangs/${hangId}`, {
     method: "PATCH",
     headers: getHeaders(),
     body: JSON.stringify(hangAttributesToUpdate)
@@ -71,7 +71,7 @@ const editHang = (hangId,hangAttributesToUpdate) => {
 }
 
 const deleteHang = hangId => {
-  return fetch(`${API_ROOT}/entries/${hangId}`, {
+  return fetch(`${API_ROOT}/hangs/${hangId}`, {
     method: "DELETE",
     headers: getHeaders()
   }).then(res => res.json());
