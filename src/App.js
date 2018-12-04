@@ -8,13 +8,16 @@ import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {friends:[]}
+    this.state = {friends:[],hangs:[]}
   }
 
   componentDidMount(){
-    services.friends.getFriends().then(friendsResponse=>{
-      this.setState({friends:friendsResponse})
+    services.friends.getFriends().then(response=>{
+      let friendsResponse=response['data']
+      let hangsResponse=response['included']
+      this.setState({friends:friendsResponse,hangs:hangsResponse})
     })
+
   }
 
 
@@ -39,7 +42,7 @@ class App extends Component {
     return (
       <div className="app container">
         <Header userName={this.state.userName} />
-        <FriendsList handleCreateHang={this.handleCreateHang} friends={this.state.friends} />
+        <FriendsList handleCreateHang={this.handleCreateHang} friends={this.state.friends} hangs={this.state.hangs}/>
         <NewFriendContainer handleCreateFriend={this.handleCreateFriend}/>
       </div>
     );

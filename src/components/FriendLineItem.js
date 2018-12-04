@@ -5,8 +5,8 @@ import HangHistoryList from '../components/HangHistoryList.js'
 class FriendLineItem extends React.Component {
   render() {
      // broken, look at moment JS (written as a string currently)
-    var lastHang = this.props.friend.data.attributes.lastDateSeen
-    var numberOfDaysToAdd = this.props.friend.data.attributes.desiredFrequency;
+    var lastHang = this.props.friend.attributes.lastDateSeen
+    var numberOfDaysToAdd = this.props.friend.attributes.desiredFrequency;
     var lastHangDate = new Date(lastHang)
     lastHangDate.setDate(lastHangDate.getDate() + numberOfDaysToAdd)
     var dd = lastHangDate.getDate();
@@ -19,13 +19,13 @@ class FriendLineItem extends React.Component {
     return (
       <div className="card">
         <div className="card-body">
-          <h5 className="card-title"> {this.props.friend.data.attributes.name} </h5>
+          <h5 className="card-title"> {this.props.friend.attributes.name} </h5>
           <p className="card-text"> You should schedule something with them by: {nextHang} </p>
-          <p className="card-text"> Suggested plans: {this.props.friend.data.attributes.name} {this.props.friend.data.attributes.notes} </p>
-          <p className="card-text">Recent Hangs with {this.props.friend.data.attributes.name}:</p>
+          <p className="card-text"> Suggested plans: {this.props.friend.attributes.name} {this.props.friend.attributes.notes} </p>
+          <p className="card-text">Recent Hangs with {this.props.friend.attributes.name}:</p>
         </div>
         <div className="card-footer">
-          <HangHistoryList handleCreateHang={this.props.handleCreateHang} friend={this.props.friend}/>
+          <HangHistoryList handleCreateHang={this.props.handleCreateHang} friend={this.props.friend} friendHangs={this.props.friendHangs}/>
         </div>
       </div>
     )
