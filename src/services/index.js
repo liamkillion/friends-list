@@ -23,7 +23,7 @@ const createNewFriend = newFriend => {
   return fetch(`${API_ROOT}/friends`, {
     method: "POST",
     headers: getHeaders(),
-    body: JSON.stringify({ friend: newFriend })
+    body: JSON.stringify(newFriend)
   }).then(res => res.json());
 };
 
@@ -58,7 +58,7 @@ const createNewHang = newHang => {
   return fetch(`${API_ROOT}/hangs`, {
     method: "POST",
     headers: getHeaders(),
-    body: JSON.stringify({ hang: newHang })
+    body: JSON.stringify(newHang)
   }).then(res => res.json());
 };
 

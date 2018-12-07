@@ -22,20 +22,32 @@ class App extends Component {
 
 
   handleCreateFriend = friend => {
-    this.setState( {
-                    friends: [friend,...this.state.friends]
-                }
-              )
+    // this.setState( {
+    //                 friends: [friend,...this.state.friends]
+    //             }
+    //           )
+    services.friends.createNewFriend(friend).then(response=>{
+      let friendsResponse=response['data']
+      this.setState({friends:friendsResponse})
+    })
   }
 
-  handleCreateHang = (friend, hangDetails) => {
-    let ff=[...this.state.friends]
-    ff.forEach(f=>{
-      if (f.id===friend.id){
-        f['hangHistory'].push({'date':hangDetails.date,'activity':hangDetails.activity})
-      }
+  handleCreateHang = hang => {
+    // let ff=[...this.state.friends]
+    // ff.forEach(f=>{
+    //   if (f.id===friend.id){
+    //     f['hangHistory'].push({'date':hangDetails.date,'activity':hangDetails.activity})
+    //   }
+    // })
+    // this.setState({friends:ff})
+    // this.setState( {
+    //                 hangs: [hang,...this.state.hangs]
+    //             }
+    //           )
+    services.hangs.createNewHang(hang).then(response=>{
+      let hangsResponse=response['data']
+      this.setState({hangs:hangsResponse})
     })
-    this.setState({friends:ff})
   }
 
   render() {

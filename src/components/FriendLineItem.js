@@ -5,6 +5,7 @@ import HangHistoryList from '../components/HangHistoryList.js'
 class FriendLineItem extends React.Component {
   render() {
      // broken, look at moment JS (written as a string currently)
+     debugger
     var lastHang = this.props.friend.attributes.lastDateSeen
     var numberOfDaysToAdd = this.props.friend.attributes.desiredFrequency;
     var lastHangDate = new Date(lastHang)
