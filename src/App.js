@@ -27,6 +27,7 @@ class App extends Component {
     //             }
     //           )
     services.friends.createNewFriend(friend).then(response=>{
+      debugger
       let friendsResponse=response['data']
       this.setState({friends:friendsResponse})
     })
