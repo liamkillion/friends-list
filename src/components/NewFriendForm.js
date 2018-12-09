@@ -6,8 +6,8 @@ class NewFriendForm extends React.Component {
     super(props);
     this.state={
       name:"",
-      frequency:null,
-      lastSeen:"",
+      desiredFrequency:"",
+      lastDateSeen:"",
       notes:""
     }
   }
@@ -18,9 +18,11 @@ class NewFriendForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state)
+    let state = this.state
+    state.desiredFrequency = parseInt(state.desiredFrequency)
+    debugger
     this.props.handleCreateFriend(this.state);
-    this.setState({ name:"", frequency:"", lastSeen:"", notes:""})
+    this.setState({ name:"", desiredFrequency:"", lastDateSeen:"", notes:""})
   };
 
   render () {
@@ -29,11 +31,11 @@ class NewFriendForm extends React.Component {
         <label className="sr-only" for="name">Friend's Name</label>
         <input onChange={this.handleChange} type="text" className="form-control" name="name" placeholder="Friend's Name" value={this.state.name} />
 
-        <label className="sr-only" for="frequency">Desired Frequency</label>
-        <input onChange={this.handleChange} type="number" className="form-control" name="frequency" placeholder="Desired Frequency" value={parseInt(this.state.frequency)} />
+        <label className="sr-only" for="desiredFrequency">Desired Frequency</label>
+        <input onChange={this.handleChange} type="number" className="form-control" name="desiredFrequency" placeholder="Desired Frequency" value={this.state.desiredFrequency} />
 
-        <label className="sr-only" for="lastSeen">Last Seen</label>
-        <input onChange={this.handleChange} type="date" className="form-control" name="lastSeen"></input>
+        <label className="sr-only" for="lastDateSeen">Last Seen</label>
+        <input onChange={this.handleChange} type="date" className="form-control" name="lastDateSeen"></input>
 
         <label className="sr-only" for="notes">Likes/Dislikes</label>
         <input onChange={this.handleChange} type="text" className="form-control" name="notes" value={this.state.notes} placeholder="Friend's Likes/Dislikes"></input>

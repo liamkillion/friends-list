@@ -20,6 +20,7 @@ const getFriend = friendId => {
 };
 
 const createNewFriend = newFriend => {
+  debugger
   return fetch(`${API_ROOT}/friends`, {
     method: "POST",
     headers: getHeaders(),
