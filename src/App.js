@@ -17,34 +17,17 @@ class App extends Component {
       let hangsResponse=response['included']
       this.setState({friends:friendsResponse,hangs:hangsResponse})
     })
-
   }
 
 
   handleCreateFriend = friend => {
-    // this.setState( {
-    //                 friends: [friend,...this.state.friends]
-    //             }
-    //           )
     services.friends.createNewFriend(friend).then(response=>{
-      debugger
       let friendsResponse=response['data']
       this.setState({friends:friendsResponse})
     })
   }
 
   handleCreateHang = hang => {
-    // let ff=[...this.state.friends]
-    // ff.forEach(f=>{
-    //   if (f.id===friend.id){
-    //     f['hangHistory'].push({'date':hangDetails.date,'activity':hangDetails.activity})
-    //   }
-    // })
-    // this.setState({friends:ff})
-    // this.setState( {
-    //                 hangs: [hang,...this.state.hangs]
-    //             }
-    //           )
     services.hangs.createNewHang(hang).then(response=>{
       let hangsResponse=response['data']
       this.setState({hangs:hangsResponse})
@@ -61,5 +44,22 @@ class App extends Component {
     );
   }
 }
+// current
+// -desiredFrequency in NewFriendForm saving as string not integer
+// ------------------------
+// to do
+// -make sure dates are right
+// add form to schedule hang, and log an occured hang (scheduled AND unscheduld)
+// -split hangs btwn past/future
+// -make hang form more obvious
+// -work in auth
+// -develop "upcoming hangs" view
+// -host on heroku
+// -host on digital ocean
+// -generate calendar event
+// -send email reminder to reach out
+// -send text reminder to reach out
+// -events in your area
+
 
 export default App;
