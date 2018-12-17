@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Header from "./components/Header.js";
 import FriendsList from "./components/FriendsList.js";
 import NewFriendContainer from "./containers/NewFriendContainer.js"
@@ -36,16 +37,26 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app container">
-        <Header userName={this.state.userName} />
-        <FriendsList handleCreateHang={this.handleCreateHang} friends={this.state.friends} hangs={this.state.hangs}/>
-        <NewFriendContainer handleCreateFriend={this.handleCreateFriend}/>
-      </div>
+      <Router>
+        <div className="app container">
+          <Header userName={this.state.userName} />
+          <Route
+            path="/"
+            render={ (props) =>
+              <div>
+                <FriendsList friends={this.state.friends} hangs={this.state.hangs} handleCreateHang={this.handleCreateHang}/>
+                <NewFriendContainer handleCreateFriend={this.handleCreateFriend}/>
+              </div>
+
+            }
+          />
+        </div>
+      </Router>
     );
   }
 }
 // current
-// -log an unscheduled,occured hang 
+// -log an unscheduled,occured hang
 // ------------------------
 // to do
 // -split hangs btwn past/future

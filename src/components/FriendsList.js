@@ -5,8 +5,8 @@ import FriendLineItem from "./FriendLineItem.js";
 class FriendsList extends React.Component {
   render() {
     let hangs = this.props.hangs
+    debugger
     const friendsList = this.props.friends.map(friend => {
-      debugger
       let friendHangs = hangs.filter(hang=>hang.attributes.friend_id===parseInt(friend.id))
       return (<FriendLineItem friendHangs={friendHangs} friend={friend} handleCreateHang={this.props.handleCreateHang}  />);
     });
