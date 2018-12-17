@@ -45,9 +45,9 @@ class App extends Component {
   }
 }
 // current
+// -log an unscheduled,occured hang 
 // ------------------------
 // to do
-// add form to schedule hang, and log an occured hang (scheduled AND unscheduld)
 // -split hangs btwn past/future
 // -make hang form more obvious
 // -work in auth
@@ -58,7 +58,7 @@ class App extends Component {
 // -send email reminder to reach out
 // -send text reminder to reach out
 // -events in your area
-// 
+//
 // done
 // ------------------------
 // -desiredFrequency in NewFriendForm saving as string not integerX
