@@ -45,10 +45,8 @@ class App extends Component {
   }
 }
 // current
-// -desiredFrequency in NewFriendForm saving as string not integer
 // ------------------------
 // to do
-// -make sure dates are right
 // add form to schedule hang, and log an occured hang (scheduled AND unscheduld)
 // -split hangs btwn past/future
 // -make hang form more obvious
@@ -60,6 +58,9 @@ class App extends Component {
 // -send email reminder to reach out
 // -send text reminder to reach out
 // -events in your area
-
-
+// 
+// done
+// ------------------------
+// -desiredFrequency in NewFriendForm saving as string not integerX
+// -make sure dates are right X
 export default App;

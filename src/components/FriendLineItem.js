@@ -12,7 +12,7 @@ class FriendLineItem extends React.Component {
           <p className="card-text"> You should schedule something with them by:
             <Moment add={{days:this.props.friend.attributes.desiredFrequency}} format="MM/DD/YY">{this.props.friend.attributes.lastDateSeen}</Moment>
           </p>
-          <p className="card-text"> Suggested plans: {this.props.friend.attributes.name} {this.props.friend.attributes.notes} </p>
+          <p className="card-text"> Suggested plans: {this.props.friend.attributes.name} likes {this.props.friend.attributes.notes} </p>
           <p className="card-text">Recent Hangs with {this.props.friend.attributes.name}:</p>
         </div>
         <div className="card-footer">
