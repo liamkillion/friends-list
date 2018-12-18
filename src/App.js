@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Header from "./components/Header.js";
 import FriendsList from "./components/FriendsList.js";
-import NewFriendContainer from "./containers/NewFriendContainer.js"
+import NewFriendForm from "./components/NewFriendForm.js"
+import HangsViewContainer from "./containers/HangsViewContainer.js"
 import {services} from "./services"
 import "./App.css";
 
@@ -45,9 +46,14 @@ class App extends Component {
             render={ (props) =>
               <div>
                 <FriendsList friends={this.state.friends} hangs={this.state.hangs} handleCreateHang={this.handleCreateHang}/>
-                <NewFriendContainer handleCreateFriend={this.handleCreateFriend}/>
+                <NewFriendForm handleCreateFriend={this.handleCreateFriend}/>
               </div>
-
+            }
+          />
+          <Route
+            path="/hangs"
+            render={(props)=>
+                   <HangsViewContainer friends={this.state.friends} hangs={this.state.hangs}/>
             }
           />
         </div>
@@ -56,7 +62,7 @@ class App extends Component {
   }
 }
 // current
-// -log an unscheduled,occured hang
+
 // ------------------------
 // to do
 // -split hangs btwn past/future
@@ -69,9 +75,11 @@ class App extends Component {
 // -send email reminder to reach out
 // -send text reminder to reach out
 // -events in your area
+// -log an unscheduled,occured hang
 //
 // done
 // ------------------------
 // -desiredFrequency in NewFriendForm saving as string not integerX
 // -make sure dates are right X
+// -implemented router
 export default App;
