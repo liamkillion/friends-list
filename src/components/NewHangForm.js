@@ -5,7 +5,7 @@ class NewHangForm extends React.Component {
   constructor(props){
     super(props)
     this.state={
-      friend_id:this.props.friend.id,
+      friend_id:parseInt(this.props.friend.id),
       date:"",
       activity:"",
       didHang: false
@@ -17,6 +17,7 @@ class NewHangForm extends React.Component {
   }
 
   handleSubmit = event => {
+    let state = this.state
     event.preventDefault();
     this.props.handleCreateHang(this.state);
   };

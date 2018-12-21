@@ -13,25 +13,34 @@ class App extends Component {
     this.state = {friends:[],hangs:[]}
   }
 
+  // componentDidMount(){
+  //   services.friends.getFriends().then(response=>{
+  //     debugger
+  //     let friendsResponse=response['data']
+  //     let hangsResponse=response['included']
+  //     this.setState({friends:friendsResponse,hangs:hangsResponse})
+  //   })
+  // }
+
   componentDidMount(){
     services.friends.getFriends().then(response=>{
-      let friendsResponse=response['data']
-      let hangsResponse=response['included']
-      this.setState({friends:friendsResponse,hangs:hangsResponse})
+      this.setState({friends:response['data']})
+    })
+    services.hangs.getHangs().then(response=>{
+      this.setState({hangs:response})
     })
   }
 
-
   handleCreateFriend = friend => {
     services.friends.createNewFriend(friend).then(response=>{
-      let friendsResponse=response['data']
+      let friendsResponse=response
       this.setState({friends:friendsResponse})
     })
   }
 
   handleCreateHang = hang => {
     services.hangs.createNewHang(hang).then(response=>{
-      let hangsResponse=response['data']
+      let hangsResponse=response
       this.setState({hangs:hangsResponse})
     })
   }
