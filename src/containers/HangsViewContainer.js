@@ -8,7 +8,7 @@ const HangsViewContainer = (props) => {
   return (
     <div>
       <h5>Here are your hangs!</h5>
-      <PastHangsList />
+      <PastHangsList hangs={this.props.hangs}/>
       <UpcomingHangsList />
     </div>
   )

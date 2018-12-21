@@ -22,6 +22,7 @@ class App extends Component {
   //   })
   // }
 
+// could be refactored to be 1 request
   componentDidMount(){
     services.friends.getFriends().then(response=>{
       this.setState({friends:response['data']})
@@ -71,24 +72,30 @@ class App extends Component {
   }
 }
 // current
-
+// -develop "upcoming hangs" view
+// --calendar view?
+// --timeline view?
+// --only show most recent on friends view
 // ------------------------
 // to do
+// -trello board
+// -add auth (twitter/facebook/gmail oauth2)
 // -split hangs btwn past/future
 // -make hang form more obvious
 // -work in auth
-// -develop "upcoming hangs" view
 // -host on heroku
 // -host on digital ocean
 // -generate calendar event
-// -send email reminder to reach out
-// -send text reminder to reach out
+// -send email reminder to reach out (sendgrid)
+// -send text reminder to reach out (twillio)
 // -events in your area
 // -log an unscheduled,occured hang
+// -reconsider how data is being displayed on friend/hangs page
+// working with response
 //
 // done
 // ------------------------
-// -desiredFrequency in NewFriendForm saving as string not integerX
+// -desiredFrequency in NewFriendForm saving as string not integer X
 // -make sure dates are right X
-// -implemented router
+// -implemented router X
 export default App;

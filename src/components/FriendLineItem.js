@@ -5,7 +5,6 @@ import Moment from 'react-moment';
 
 class FriendLineItem extends React.Component {
   render() {
-    debugger
     return (
       <div className="card">
         <div className="card-body">
