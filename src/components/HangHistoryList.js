@@ -5,12 +5,11 @@ import NewHangForm from './NewHangForm.js'
 
 class HangHistoryList extends React.Component {
   render() {
-    const hangList = this.props.friendHangs.map(hang => {
-      return <HangHistoryLineItem hang={hang} />
-    });
+    const orderedHangs = this.props.friendHangs.sort((a,b) => (a.last_nom > b.last_nom) ? 1 : ((b.last_nom > a.last_nom) ? -1 : 0));
+    const historicOrderedHangs = orderedHangs.filter(hang=>new Date(hang.date) < new Date(Date.now()))
     return (
       <div>
-        <ul className="hangList list-group">{hangList}</ul>
+        <ul className="hangList list-group"><HangHistoryLineItem hang={historicOrderedHangs[0]} /></ul>
         <h5>Schedule an hang with this friend!</h5>
         <NewHangForm handleCreateHang={this.props.handleCreateHang} friend={this.props.friend}/>
       </div>

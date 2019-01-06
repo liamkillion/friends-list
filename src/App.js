@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Header from "./components/Header.js";
 import FriendsList from "./components/FriendsList.js";
+import PastHangsList from "./components/PastHangsList.js";
+import UpcomingHangsList from "./components/UpcomingHangsList.js";
 import NewFriendForm from "./components/NewFriendForm.js"
-import HangsViewContainer from "./containers/HangsViewContainer.js"
 import {services} from "./services"
 import "./App.css";
 
@@ -12,15 +13,6 @@ class App extends Component {
     super(props);
     this.state = {friends:[],hangs:[]}
   }
-
-  // componentDidMount(){
-  //   services.friends.getFriends().then(response=>{
-  //     debugger
-  //     let friendsResponse=response['data']
-  //     let hangsResponse=response['included']
-  //     this.setState({friends:friendsResponse,hangs:hangsResponse})
-  //   })
-  // }
 
 // could be refactored to be 1 request
   componentDidMount(){
@@ -63,7 +55,10 @@ class App extends Component {
           <Route
             path="/hangs"
             render={(props)=>
-                   <HangsViewContainer friends={this.state.friends} hangs={this.state.hangs}/>
+              <div>
+                <PastHangsList friends={this.state.friends} hangs={this.state.hangs} handleCreateHang={this.handleCreateHang}/>
+                <UpcomingHangsList friends={this.state.friends} hangs={this.state.hangs} handleCreateHang={this.handleCreateHang}/>
+              </div>
             }
           />
         </div>
@@ -75,7 +70,6 @@ class App extends Component {
 // -develop "upcoming hangs" view
 // --calendar view?
 // --timeline view?
-// --only show most recent on friends view
 // ------------------------
 // to do
 // -trello board
@@ -98,4 +92,5 @@ class App extends Component {
 // -desiredFrequency in NewFriendForm saving as string not integer X
 // -make sure dates are right X
 // -implemented router X
+// --only show most recent on friends view X
 export default App;
