@@ -25,10 +25,10 @@ class NewHangForm extends React.Component {
   render () {
     return(
       <form className="form-inline">
-        <label className="sr-only" for="date">Activity Date</label>
+        <label className="sr-only" htmlFor="date">Activity Date</label>
         <input onChange={this.handleChange} type="date" className="form-control" name="date"></input>
 
-        <label className="sr-only" for="activity">A short description of the activity</label>
+        <label className="sr-only" htmlFor="activity">A short description of the activity</label>
         <input onChange={this.handleChange} type="textarea" className="form-control" name="activity" placeholder="A short description of the activity "></input>
 
         <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
