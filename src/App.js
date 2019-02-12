@@ -72,7 +72,6 @@ class App extends Component {
 // --timeline view?
 // ------------------------
 // to do
-// flow vs. typescript???(typescript)
 // -trello board
 // -add auth (twitter/facebook/gmail oauth2)
 // -split hangs btwn past/future
