@@ -1,10 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+// import React from 'react'
+import * as React from "react"
 import Moment from 'react-moment';
 import { FaCalendarCheck,  FaRegCalendarTimes} from 'react-icons/fa';
 
+export interface HangHistoryLineItemProps { date: string; activity: string; digHang: boolean }
 
-class HangHistoryLineItem extends React.Component {
+// class HangHistoryLineItem extends React.Component {
+export class HangHistoryLineItem extends React.Component<HangHistoryLineItemProps,{}> {
   render() {
     return (
       <li className="list-group-item">
@@ -16,4 +18,4 @@ class HangHistoryLineItem extends React.Component {
   }
 }
 
-export default HangHistoryLineItem;
+// export default HangHistoryLineItem;

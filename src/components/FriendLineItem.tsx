@@ -1,9 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+// import React from 'react'
+import * as React from "react"
 import HangHistoryList from '../components/HangHistoryList.js'
 import Moment from 'react-moment';
 
-class FriendLineItem extends React.Component {
+export interface FriendLineItemProps {friend:object, handleCreateHang:function}
+
+// class FriendLineItem extends React.Component {
+export class FriendLineItem extends React.Component<FriendLineItemProps,{}> {
   render() {
     return (
       <div className="card">
@@ -22,4 +25,4 @@ class FriendLineItem extends React.Component {
   }
 }
 
-export default FriendLineItem;
+// export default FriendLineItem;
