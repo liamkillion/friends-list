@@ -6,7 +6,6 @@ class Header extends React.Component {
     return (
       <nav className="navbar navbar-light bg-light">
         <span className="navbar-brand mb-0 h1">Remind Me to See my Friends</span>
-        <span className="navbar-text">Welcome, {this.props.userName}</span>
       </nav>
     );
   }
