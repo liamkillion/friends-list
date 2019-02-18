@@ -97,9 +97,8 @@ class App extends Component {
   }
 }
 // current
-// -develop "upcoming hangs" view
+
 // --calendar view?
-// --timeline view?
 // ------------------------
 // to do
 // flow vs. typescript???(typescript)
@@ -124,4 +123,6 @@ class App extends Component {
 // -make sure dates are right X
 // -implemented router X
 // --only show most recent on friends view X
+// -develop "upcoming hangs" view X
+// --timeline view? X  
 export default App;
