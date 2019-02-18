@@ -1,22 +1,20 @@
 import React from 'react'
 import HangHistoryLineItem from './HangHistoryLineItem.js'
 
-class PastHangsList extends React.Component {
+class UpcomingHangsList extends React.Component {
   render () {
     const orderedHangs = this.props.hangs.sort((a,b) => (a.last_nom > b.last_nom) ? 1 : ((b.last_nom > a.last_nom) ? -1 : 0));
-    const historicOrderedHangs = orderedHangs.filter(hang=>new Date(hang.date) < new Date(Date.now()))
-    const pastHangsList = this.props.hangs.map(hang => {
+    const historicOrderedHangs = orderedHangs.filter(hang=>new Date(hang.date) > new Date(Date.now()))
+    const futureHangsList = this.props.hangs.map(hang => {
       return (<HangHistoryLineItem key={hang.id} hang={hang} friend={hang.friend_id} />);
     });
-
     return(
       <div>
-        <h5>Past Hangs</h5>
-        {pastHangsList}
+        <h5>Upcoming Hangs</h5>
+        {futureHangsList}
       </div>
-
     )
   }
 }
 
-export default PastHangsList;
+export default UpcomingHangsList;

@@ -4,7 +4,7 @@ import Moment from 'react-moment';
 import { FaCalendarCheck,  FaRegCalendarTimes} from 'react-icons/fa';
 
 
-class HangHistoryListItem extends React.Component {
+class HangHistoryLineItem extends React.Component {
   render() {
     return (
       <li className="list-group-item">
@@ -16,4 +16,4 @@ class HangHistoryListItem extends React.Component {
   }
 }
 
-export default HangHistoryListItem;
+export default HangHistoryLineItem;

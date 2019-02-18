@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Header from "./components/Header.js";
 import FriendsList from "./components/FriendsList.js";
 import PastHangsList from "./components/PastHangsList.js";
-import UpcomingHangsList from "./components/UpcomingHangsList.js";
+import FutureHangsList from "./components/FutureHangsList.js";
 import NewFriendForm from "./components/NewFriendForm.js"
 import {services} from "./services"
 import "./App.css";
@@ -44,7 +44,7 @@ class App extends Component {
         <div className="app container">
           <Header userName={this.state.userName} />
           <Route
-            path="/"
+            exact path="/"
             render={ (props) =>
               <div>
                 <FriendsList friends={this.state.friends} hangs={this.state.hangs} handleCreateHang={this.handleCreateHang}/>
@@ -53,11 +53,13 @@ class App extends Component {
             }
           />
           <Route
-            path="/hangs"
-            render={(props)=>
+            strict path="/hangs"
+            render={ (props) =>
               <div>
-                <PastHangsList friends={this.state.friends} hangs={this.state.hangs} handleCreateHang={this.handleCreateHang}/>
-                <UpcomingHangsList friends={this.state.friends} hangs={this.state.hangs} handleCreateHang={this.handleCreateHang}/>
+                <button>Hide Past Hangs</button>
+                <button>Future Past Hangs</button>
+                <PastHangsList friends={this.state.friends} hangs={this.state.hangs} />
+                <FutureHangsList friends={this.state.friends} hangs={this.state.hangs} />
               </div>
             }
           />

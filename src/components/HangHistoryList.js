@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import HangHistoryLineItem from './HangHistoryLineItem.js'
 import NewHangForm from './NewHangForm.js'
 
