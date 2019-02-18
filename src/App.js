@@ -38,6 +38,30 @@ class App extends Component {
     })
   }
 
+  togglePastHangsVisibility = () => {
+    let elementDisplay = document.getElementById('PastHangsListHolder').getAttribute('style')
+    debugger
+    if (elementDisplay === "display: block" || null){
+      document.getElementById('PastHangsListHolder').setAttribute("style","display: none")
+      document.getElementById('PastHangsButton').innerHTML="Show Past Hangs"
+    } else {
+      document.getElementById('PastHangsListHolder').setAttribute("style","display: block")
+      document.getElementById('PastHangsButton').innerHTML="Hide Past Hangs"
+    }
+  }
+
+  toggleFutureHangsVisibility = () => {
+    let elementDisplay = document.getElementById('FutureHangsListHolder').getAttribute('style')
+    debugger
+    if (elementDisplay === "display: block" || null){
+      document.getElementById('FutureHangsListHolder').setAttribute("style","display: none")
+      document.getElementById('FutureHangsButton').innerHTML="Show Future Hangs"
+    } else {
+      document.getElementById('FutureHangsListHolder').setAttribute("style","display: block")
+      document.getElementById('FutureHangsButton').innerHTML="Hide Future Hangs"
+    }
+  }
+
   render() {
     return (
       <Router>
@@ -56,10 +80,14 @@ class App extends Component {
             strict path="/hangs"
             render={ (props) =>
               <div>
-                <button>Hide Past Hangs</button>
-                <button>Future Past Hangs</button>
-                <PastHangsList friends={this.state.friends} hangs={this.state.hangs} />
-                <FutureHangsList friends={this.state.friends} hangs={this.state.hangs} />
+                <button id="PastHangsButton" onClick={this.togglePastHangsVisibility}>Hide Past Hangs</button>
+                <button id="FutureHangsButton" onClick={this.toggleFutureHangsVisibility}>Hide Future Hangs</button>
+                <div id="PastHangsListHolder">
+                  <PastHangsList friends={this.state.friends} hangs={this.state.hangs} />
+                </div>
+                <div id="FutureHangsListHolder">
+                  <FutureHangsList friends={this.state.friends} hangs={this.state.hangs} />
+                </div>
               </div>
             }
           />
