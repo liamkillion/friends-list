@@ -3,10 +3,10 @@ import * as React from "react"
 import HangHistoryList from '../components/HangHistoryList.js'
 import Moment from 'react-moment';
 
-export interface FriendLineItemProps {friend:object, handleCreateHang:function}
+interface Props {friend:object, handleCreateHang:function}
 
 // class FriendLineItem extends React.Component {
-export class FriendLineItem extends React.Component<FriendLineItemProps,{}> {
+export class FriendLineItem extends React.Component<Props> {
   render() {
     return (
       <div className="card">
