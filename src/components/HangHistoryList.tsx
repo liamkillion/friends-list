@@ -2,7 +2,7 @@
 import * as React from "react"
 import HangHistoryLineItem from './HangHistoryLineItem'
 import NewHangForm from './NewHangForm.js'
-import {Hang, Friend, handleCreateFunction} from "../interfaces.ts"
+import {Hang, Friend, handleCreateFunction} from "../interfaces"
 
 interface Props {friendHangs:Hang[], handleCreateHang:handleCreateFunction, friend:Friend}
 

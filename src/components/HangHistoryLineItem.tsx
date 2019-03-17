@@ -2,13 +2,13 @@
 import * as React from "react"
 import Moment from 'react-moment';
 import { FaCalendarCheck,  FaRegCalendarTimes} from 'react-icons/fa';
-import Hang from "../interfaces.ts"
+import Hang from "../interfaces"
 
 // interface Hang { date: string; activity: string; didHang: boolean }
 interface Props {hang: Hang}
 
 // class HangHistoryLineItem extends React.Component {
-export default class HangHistoryLineItem extends React.Component<Props> {
+export class HangHistoryLineItem extends React.Component<Props> {
   render() {
     return (
       <li className="list-group-item">

@@ -1,7 +1,7 @@
 // import React from 'react'
 import * as React from 'react'
 // import PropTypes from 'prop-types'
-import handleCreateFunction from "./interfaces.ts"
+import handleCreateFunction from "../interfaces"
 
 interface Props {handleCreateHang:handleCreateFunction}
 interface State {friend_id:number, date:string, activity:string, didHang:boolean}

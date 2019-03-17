@@ -1,15 +1,15 @@
-import React, { Component } from "react";
+import * as React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import Header from "./components/Header.js";
-import FriendsList from "./components/FriendsList.tsx";
-import PastHangsList from "./components/PastHangsList.js";
-import FutureHangsList from "./components/FutureHangsList.js";
-import NewFriendForm from "./components/NewFriendForm.js"
+import Header from "./components/Header";
+import FriendsList from "./components/FriendsList";
+import PastHangsList from "./components/PastHangsList";
+import FutureHangsList from "./components/FutureHangsList";
+import NewFriendForm from "./components/NewFriendForm"
 import {services} from "./services"
 import "./App.css";
-import handleCreate from "./interfaces.ts"
+import handleCreateFunction from "./interfaces"
 
-class App extends Component {
+export class App extends React.Component <>{
   constructor(props) {
     super(props);
     this.state = {friends:[],hangs:[]}
@@ -32,7 +32,7 @@ class App extends Component {
   //   })
   // }
 
-  let handleCreateFriend:handleCreate;
+  let handleCreateFriend:handleCreateFunction;
   handleCreateFriend = function(hang:object): object {
     services.friends.createNewFriend(friend).then(response=>{
       let friendsResponse=response
@@ -47,7 +47,7 @@ class App extends Component {
   //   })
   // }
 
-  let handleCreateHang:handleCreate;
+  let handleCreateHang:handleCreateFunction;
   handleCreateHang = function(hang:object): object {
     services.hangs.createNewHang(hang).then(response=>{
       let hangsResponse=response
