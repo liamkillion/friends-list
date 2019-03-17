@@ -1,7 +1,7 @@
 // import React from "react";
 import * as React from "react"
 import FriendLineItem from "./FriendLineItem";
-import {Hang, Friend, handleCreateFunction} from "../interfaces.ts"
+import {Hang, Friend, handleCreateFunction} from "../interfaces"
 // interface Hang { date: string; activity: string; didHang: boolean; friend_id: integer }
 // interface Friend { name: string; frequency: integer; id: integer; hangs: Hang[] };
 interface Props {friends: Friend[], hangs: Hang[], handleCreateHang: handleCreateFunction}

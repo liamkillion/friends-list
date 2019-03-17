@@ -2,7 +2,7 @@
 import * as React from "react"
 import HangHistoryList from '../components/HangHistoryList'
 import Moment from 'react-moment';
-import {Friend, handleCreateFunction} from "../interfaces.ts"
+import {Friend, handleCreateFunction} from "../interfaces"
 
 interface Props {friend:Friend, handleCreateHang:handleCreateFunction}
 

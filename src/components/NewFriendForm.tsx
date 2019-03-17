@@ -1,6 +1,6 @@
 // import React from 'react'
 import * as React from 'react'
-import handleCreateFunction from "../interfaces.ts"
+import handleCreateFunction from "../interfaces"
 
 interface Props {handleCreateFriend:handleCreateFunction}
 interface State {name:string, desiredFrequency:number,lastDateSeen:string, notes:string}

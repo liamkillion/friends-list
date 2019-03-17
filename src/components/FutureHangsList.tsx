@@ -1,7 +1,7 @@
 // import React from 'react'
 import * as React from 'react'
 import HangHistoryLineItem from './HangHistoryLineItem'
-import Hang from "../interfaces.ts"
+import Hang from "../interfaces"
 
 interface Props {hangs:Hang[]}
 
