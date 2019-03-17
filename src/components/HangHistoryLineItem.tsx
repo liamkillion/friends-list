@@ -2,8 +2,9 @@
 import * as React from "react"
 import Moment from 'react-moment';
 import { FaCalendarCheck,  FaRegCalendarTimes} from 'react-icons/fa';
+import Hang from "../interfaces.ts"
 
-interface Hang { date: string; activity: string; didHang: boolean }
+// interface Hang { date: string; activity: string; didHang: boolean }
 interface Props {hang: Hang}
 
 // class HangHistoryLineItem extends React.Component {

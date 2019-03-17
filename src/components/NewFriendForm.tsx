@@ -1,7 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+// import React from 'react'
+import * as React from 'react'
+import handleCreateFunction from "../interfaces.ts"
 
-class NewFriendForm extends React.Component {
+interface Props {handleCreateFriend:handleCreateFunction}
+interface State {name:string, desiredFrequency:number,lastDateSeen:string, notes:string}
+
+
+// class NewFriendForm extends React.Component {
+export class NewFriendForm extends React.Component<Props,State> {
   constructor(props) {
     super(props);
     this.state={
@@ -20,7 +26,6 @@ class NewFriendForm extends React.Component {
     event.preventDefault();
     let state = this.state
     state.desiredFrequency = parseInt(state.desiredFrequency)
-    debugger
     this.props.handleCreateFriend(this.state);
     this.setState({ name:"", desiredFrequency:"", lastDateSeen:"", notes:""})
   };
@@ -48,5 +53,5 @@ class NewFriendForm extends React.Component {
     )
   }
 }
-
-export default NewFriendForm;
+//
+// export default NewFriendForm;

@@ -1,9 +1,10 @@
 // import React from 'react'
 import * as React from "react"
-import HangHistoryList from '../components/HangHistoryList.js'
+import HangHistoryList from '../components/HangHistoryList'
 import Moment from 'react-moment';
+import {Friend, handleCreateFunction} from "../interfaces.ts"
 
-interface Props {friend:object, handleCreateHang:function}
+interface Props {friend:Friend, handleCreateHang:handleCreateFunction}
 
 // class FriendLineItem extends React.Component {
 export class FriendLineItem extends React.Component<Props> {

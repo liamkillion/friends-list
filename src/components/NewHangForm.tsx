@@ -1,7 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+// import React from 'react'
+import * as React from 'react'
+// import PropTypes from 'prop-types'
+import handleCreateFunction from "./interfaces.ts"
 
-class NewHangForm extends React.Component {
+interface Props {handleCreateHang:handleCreateFunction}
+interface State {friend_id:number,date:string,:activity:string:didHang:boolean}
+
+export class NewHangForm extends React.Component<Props,State> {
   constructor(props){
     super(props)
     this.state={
@@ -38,4 +43,4 @@ class NewHangForm extends React.Component {
   }
 }
 
-export default NewHangForm;
+// export default NewHangForm;
