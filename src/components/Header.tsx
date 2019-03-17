@@ -1,7 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
+// import React from "react";
+// import PropTypes from "prop-types";
+import * as React from 'react'
 
-class Header extends React.Component {
+export class Header extends React.Component {
   render() {
     return (
       <nav className="navbar navbar-light bg-light">
@@ -10,5 +11,3 @@ class Header extends React.Component {
     );
   }
 }
-
-export default Header;

@@ -4,7 +4,7 @@ import * as React from 'react'
 import handleCreateFunction from "./interfaces.ts"
 
 interface Props {handleCreateHang:handleCreateFunction}
-interface State {friend_id:number,date:string,:activity:string:didHang:boolean}
+interface State {friend_id:number, date:string, activity:string, didHang:boolean}
 
 export class NewHangForm extends React.Component<Props,State> {
   constructor(props){
