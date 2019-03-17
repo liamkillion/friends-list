@@ -1,13 +1,14 @@
 // import React from 'react'
 import * as React from "react"
-import HangHistoryLineItem from './HangHistoryLineItem.js'
+import HangHistoryLineItem from './HangHistoryLineItem'
 import NewHangForm from './NewHangForm.js'
+import {Hang, Friend, handleCreateFunction} from "../interfaces.ts"
 
-export interface HangHistoryListProps {friendHangs:object[],handleCreateHang:function,friend:object}
+interface Props {friendHangs:Hang[], handleCreateHang:handleCreateFunction, friend:Friend}
 
-export class HangHistoryList extends React.Component<HangHistoryListProps,{}> {
+export class HangHistoryList extends React.Component<HangHistoryListProps> {
   render() {
-    const orderedHangs = this.props.friendHangs.sort((a,b) => (a.last_nom > b.last_nom) ? 1 : ((b.last_nom > a.last_nom) ? -1 : 0));
+    const orderedHangs = this.props.friendHangs.sort((a,b) => (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0));
     const historicOrderedHangs = orderedHangs.filter(hang=>new Date(hang.date) < new Date(Date.now()))
     return (
       <div>

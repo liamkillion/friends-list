@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Header from "./components/Header.js";
-import FriendsList from "./components/FriendsList.js";
+import FriendsList from "./components/FriendsList.tsx";
 import PastHangsList from "./components/PastHangsList.js";
 import UpcomingHangsList from "./components/UpcomingHangsList.js";
 import NewFriendForm from "./components/NewFriendForm.js"
 import {services} from "./services"
 import "./App.css";
+import handleCreate from "./interfaces.ts"
 
 class App extends Component {
   constructor(props) {
@@ -24,14 +25,30 @@ class App extends Component {
     })
   }
 
-  handleCreateFriend = friend => {
+  // handleCreateFriend = friend => {
+  //   services.friends.createNewFriend(friend).then(response=>{
+  //     let friendsResponse=response
+  //     this.setState({friends:friendsResponse})
+  //   })
+  // }
+
+  let handleCreateFriend:handleCreate;
+  handleCreateFriend = function(hang:object): object {
     services.friends.createNewFriend(friend).then(response=>{
       let friendsResponse=response
       this.setState({friends:friendsResponse})
     })
   }
 
-  handleCreateHang = hang => {
+  // handleCreateHang = hang => {
+  //   services.hangs.createNewHang(hang).then(response=>{
+  //     let hangsResponse=response
+  //     this.setState({hangs:hangsResponse})
+  //   })
+  // }
+
+  let handleCreateHang:handleCreate;
+  handleCreateHang = function(hang:object): object {
     services.hangs.createNewHang(hang).then(response=>{
       let hangsResponse=response
       this.setState({hangs:hangsResponse})
