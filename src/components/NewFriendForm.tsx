@@ -7,8 +7,8 @@ interface State {name:string, desiredFrequency:number,lastDateSeen:string, notes
 
 
 // class NewFriendForm extends React.Component {
-export class NewFriendForm extends React.Component<Props,State> {
-  constructor(props) {
+export default class NewFriendForm extends React.Component<Props,State> {
+  constructor(props:Props) {
     super(props);
     this.state={
       name:"",

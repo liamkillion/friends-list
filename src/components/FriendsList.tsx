@@ -7,7 +7,7 @@ import {Hang, Friend, handleCreateFunction} from "../interfaces"
 interface Props {friends: Friend[], hangs: Hang[], handleCreateHang: handleCreateFunction}
 
 // class FriendsList extends React.Component {
-export class FriendsList extends React.Component<Props> {
+export default class FriendsList extends React.Component<Props> {
   render() {
     const friendsList = this.props.friends.map(friend => {
       let friendHangs = this.props.hangs.filter(hang => hang.friend_id === parseInt(friend.id))

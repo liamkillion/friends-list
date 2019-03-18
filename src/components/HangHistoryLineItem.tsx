@@ -8,7 +8,7 @@ import Hang from "../interfaces"
 interface Props {hang: Hang}
 
 // class HangHistoryLineItem extends React.Component {
-export class HangHistoryLineItem extends React.Component<Props> {
+export default class HangHistoryLineItem extends React.Component<Props> {
   render() {
     return (
       <li className="list-group-item">

@@ -6,7 +6,7 @@ import {Hang, Friend, handleCreateFunction} from "../interfaces"
 
 interface Props {friendHangs:Hang[], handleCreateHang:handleCreateFunction, friend:Friend}
 
-export class HangHistoryList extends React.Component<HangHistoryListProps> {
+export default class HangHistoryList extends React.Component<HangHistoryListProps> {
   render() {
     const orderedHangs = this.props.friendHangs.sort((a,b) => (a.date > b.date) ? 1 : ((b.date > a.date) ? -1 : 0));
     const historicOrderedHangs = orderedHangs.filter(hang=>new Date(hang.date) < new Date(Date.now()))
