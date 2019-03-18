@@ -2,7 +2,7 @@
 import * as React from "react"
 import Moment from 'react-moment';
 import { FaCalendarCheck,  FaRegCalendarTimes} from 'react-icons/fa';
-import Hang from "../interfaces"
+import {Hang} from "../interfaces"
 
 // interface Hang { date: string; activity: string; didHang: boolean }
 interface Props {hang: Hang}

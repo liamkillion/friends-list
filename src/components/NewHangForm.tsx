@@ -4,7 +4,7 @@ import * as React from 'react'
 import {Friend, handleCreateFunction} from "../interfaces"
 
 interface Props {handleCreateHang:handleCreateFunction, friend:Friend}
-interface State {friend_id:number, date:string, activity:string, didHang:boolean}
+interface State {friend_id:string, date:string, activity:string, didHang:boolean}
 
 export default class NewHangForm extends React.Component<Props,State> {
   constructor(props:Props){
@@ -16,13 +16,15 @@ export default class NewHangForm extends React.Component<Props,State> {
       didHang: false
     }
   }
-
-  handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+  // https://stackoverflow.com/questions/28900077/why-is-event-target-not-element-in-typescript
+  // https://stackoverflow.com/questions/12989741/the-property-value-does-not-exist-on-value-of-type-htmlelement
+  // https://stackoverflow.com/questions/33846813/typescript-how-to-check-tagname-in-eventtarget
+  handleChange(event:KeyboardEvent):void {
+    let element = event.target as HTMLInputElement
+    this.setState({ [element.tagName]: element.value });
   }
 
-  handleSubmit = event => {
-    let state = this.state
+  handleSubmit(e:MouseEvent):void {
     event.preventDefault();
     this.props.handleCreateHang(this.state);
   };
