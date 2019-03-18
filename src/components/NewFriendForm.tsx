@@ -8,7 +8,7 @@ interface State {name:string, desiredFrequency:number,lastDateSeen:string, notes
 
 // class NewFriendForm extends React.Component {
 export default class NewFriendForm extends React.Component<Props,State> {
-  constructor(props:Props) {
+  constructor(props:Props):void {
     super(props);
     this.state={
       name:"",
@@ -18,8 +18,12 @@ export default class NewFriendForm extends React.Component<Props,State> {
     }
   }
 
-  handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+  // https://stackoverflow.com/questions/28900077/why-is-event-target-not-element-in-typescript
+  // https://stackoverflow.com/questions/12989741/the-property-value-does-not-exist-on-value-of-type-htmlelement
+  // https://stackoverflow.com/questions/33846813/typescript-how-to-check-tagname-in-eventtarget
+  handleChange(event:KeyboardEvent):void {
+    let element = event.target as HTMLInputElement
+    this.setState({ [element.tagName]: element.value });
   }
 
   handleSubmit = event => {
