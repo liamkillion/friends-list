@@ -7,7 +7,7 @@ import {Friend, handleCreateFunction} from "../interfaces"
 interface Props {friend:Friend, handleCreateHang:handleCreateFunction}
 
 // class FriendLineItem extends React.Component {
-export class FriendLineItem extends React.Component<Props> {
+export default class FriendLineItem extends React.Component<Props> {
   render() {
     return (
       <div className="card">
