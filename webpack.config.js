@@ -1,7 +1,7 @@
 module.exports = {
   // change to .tsx if necessary
   // entry: './src/app.jsx',
-  entry: './src/app.tsx',
+  entry: './src/App.tsx',
   output: {
     filename: './dist/bundle.js'
   },
@@ -12,7 +12,7 @@ module.exports = {
   module: {
     rules: [
       // changed from { test: /\.jsx?$/, use: { loader: 'babel-loader' } },
-      { test: /\.(t|j)sx?$/, use: { loader: 'awesome-typescript-loader' } },
+      { test: /\.tsx?$/, use: { loader: 'awesome-typescript-loader' } },
       // addition - add source-map support
       { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
     ]

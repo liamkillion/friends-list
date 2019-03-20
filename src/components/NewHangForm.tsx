@@ -4,13 +4,13 @@ import * as React from 'react'
 import {Friend, handleCreateFunction} from "../interfaces"
 
 interface Props {handleCreateHang:handleCreateFunction, friend:Friend}
-interface State {friend_id:string, date:string, activity:string, didHang:boolean}
+interface State {friend_id:number, date:string, activity:string, didHang:boolean}
 
 export default class NewHangForm extends React.Component<Props,State> {
   constructor(props:Props){
     super(props)
     this.state={
-      friend_id:parseInt(this.props.friend.id),
+      friend_id:this.props.friend.id,
       date:"",
       activity:"",
       didHang: false
@@ -21,7 +21,9 @@ export default class NewHangForm extends React.Component<Props,State> {
   // https://stackoverflow.com/questions/33846813/typescript-how-to-check-tagname-in-eventtarget
   handleChange(event:KeyboardEvent):void {
     let element = event.target as HTMLInputElement
-    this.setState({ [element.tagName]: element.value });
+    const newState = {};
+    newState[element.tagName] = element.value;
+    this.setState(newState);
   }
 
   handleSubmit(e:MouseEvent):void {
@@ -29,7 +31,7 @@ export default class NewHangForm extends React.Component<Props,State> {
     this.props.handleCreateHang(this.state);
   };
 
-  render () {
+  render = () => {
     return(
       <form className="form-inline">
         <label className="sr-only" for="date">Activity Date</label>

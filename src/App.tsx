@@ -32,7 +32,7 @@ export class App extends React.Component <>{
   //   })
   // }
 
-  let handleCreateFriend:handleCreateFunction;
+  let handleCreateFriend: handleCreateFunction;
   handleCreateFriend = function(hang:object): object {
     services.friends.createNewFriend(friend).then(response=>{
       let friendsResponse=response
@@ -47,7 +47,7 @@ export class App extends React.Component <>{
   //   })
   // }
 
-  let handleCreateHang:handleCreateFunction;
+  let handleCreateHang: handleCreateFunction;
   handleCreateHang = function(hang:object): object {
     services.hangs.createNewHang(hang).then(response=>{
       let hangsResponse=response
@@ -79,7 +79,7 @@ export class App extends React.Component <>{
     }
   }
 
-  render() {
+  render = () => {
     return (
       <Router>
         <div className="app container">
