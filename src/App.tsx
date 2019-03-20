@@ -32,7 +32,7 @@ export class App extends React.Component <>{
   //   })
   // }
 
-  let handleCreateFriend: handleCreateFunction;
+  let handleCreateFriend:handleCreateFunction;
   handleCreateFriend = function(hang:object): object {
     services.friends.createNewFriend(friend).then(response=>{
       let friendsResponse=response
@@ -47,7 +47,7 @@ export class App extends React.Component <>{
   //   })
   // }
 
-  let handleCreateHang: handleCreateFunction;
+  let handleCreateHang:handleCreateFunction;
   handleCreateHang = function(hang:object): object {
     services.hangs.createNewHang(hang).then(response=>{
       let hangsResponse=response
@@ -55,37 +55,13 @@ export class App extends React.Component <>{
     })
   }
 
-  togglePastHangsVisibility = () => {
-    let elementDisplay = document.getElementById('PastHangsListHolder').getAttribute('style')
-    debugger
-    if (elementDisplay === "display: block" || null){
-      document.getElementById('PastHangsListHolder').setAttribute("style","display: none")
-      document.getElementById('PastHangsButton').innerHTML="Show Past Hangs"
-    } else {
-      document.getElementById('PastHangsListHolder').setAttribute("style","display: block")
-      document.getElementById('PastHangsButton').innerHTML="Hide Past Hangs"
-    }
-  }
-
-  toggleFutureHangsVisibility = () => {
-    let elementDisplay = document.getElementById('FutureHangsListHolder').getAttribute('style')
-    debugger
-    if (elementDisplay === "display: block" || null){
-      document.getElementById('FutureHangsListHolder').setAttribute("style","display: none")
-      document.getElementById('FutureHangsButton').innerHTML="Show Future Hangs"
-    } else {
-      document.getElementById('FutureHangsListHolder').setAttribute("style","display: block")
-      document.getElementById('FutureHangsButton').innerHTML="Hide Future Hangs"
-    }
-  }
-
-  render = () => {
+  render() {
     return (
       <Router>
         <div className="app container">
           <Header userName={this.state.userName} />
           <Route
-            exact path="/"
+            path="/"
             render={ (props) =>
               <div>
                 <FriendsList friends={this.state.friends} hangs={this.state.hangs} handleCreateHang={this.handleCreateHang}/>
@@ -94,17 +70,11 @@ export class App extends React.Component <>{
             }
           />
           <Route
-            strict path="/hangs"
-            render={ (props) =>
+            path="/hangs"
+            render={(props)=>
               <div>
-                <button id="PastHangsButton" onClick={this.togglePastHangsVisibility}>Hide Past Hangs</button>
-                <button id="FutureHangsButton" onClick={this.toggleFutureHangsVisibility}>Hide Future Hangs</button>
-                <div id="PastHangsListHolder">
-                  <PastHangsList friends={this.state.friends} hangs={this.state.hangs} />
-                </div>
-                <div id="FutureHangsListHolder">
-                  <FutureHangsList friends={this.state.friends} hangs={this.state.hangs} />
-                </div>
+                <PastHangsList friends={this.state.friends} hangs={this.state.hangs} handleCreateHang={this.handleCreateHang}/>
+                <UpcomingHangsList friends={this.state.friends} hangs={this.state.hangs} handleCreateHang={this.handleCreateHang}/>
               </div>
             }
           />
@@ -113,5 +83,31 @@ export class App extends React.Component <>{
     );
   }
 }
-
-export default App;
+// current
+// -develop "upcoming hangs" view
+// --calendar view?
+// --timeline view?
+// ------------------------
+// to do
+// -trello board
+// -add auth (twitter/facebook/gmail oauth2)
+// -split hangs btwn past/future
+// -make hang form more obvious
+// -work in auth
+// -host on heroku
+// -host on digital ocean
+// -generate calendar event
+// -send email reminder to reach out (sendgrid)
+// -send text reminder to reach out (twillio)
+// -events in your area
+// -log an unscheduled,occured hang
+// -reconsider how data is being displayed on friend/hangs page
+// working with response
+//
+// done
+// ------------------------
+// -desiredFrequency in NewFriendForm saving as string not integer X
+// -make sure dates are right X
+// -implemented router X
+// --only show most recent on friends view X
+// export default App;

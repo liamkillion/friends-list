@@ -10018,6 +10018,7 @@ react-scripts@1.1.5:
     fsevents "^1.1.3"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 react-visibility-sensor@^5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/react-visibility-sensor/-/react-visibility-sensor-5.0.2.tgz#e360fff81572cb3a2a9fd680484447a9da09a55d"
@@ -10025,6 +10026,8 @@ react-visibility-sensor@^5.0.2:
   dependencies:
     prop-types "^15.6.2"
 =======
+=======
+>>>>>>> 4dde761bb957c643aa5454c9e1227fd988e29396
 react-split-pane@^0.1.84:
   version "0.1.85"
   resolved "https://registry.yarnpkg.com/react-split-pane/-/react-split-pane-0.1.85.tgz#64819946a99b617ffa2d20f6f45a0056b6ee4faa"
@@ -10073,7 +10076,10 @@ react-treebeard@^3.1.0:
     prop-types "^15.6.2"
     shallowequal "^1.1.0"
     velocity-react "^1.4.1"
+<<<<<<< HEAD
 >>>>>>> upgraded storybook to address webpack error
+=======
+>>>>>>> 4dde761bb957c643aa5454c9e1227fd988e29396
 
 react@^16.5.2:
   version "16.5.2"
@@ -10156,6 +10162,7 @@ readdirp@^2.0.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-2.2.1.tgz#0e87622a3325aa33e892285caf8b4e846529a525"
   integrity sha512-1JU/8q+VgFZyxwrJ+SVIOsh+KywWGpds3NTqikiKpDMZWScmAYyKIgqkO+ARvNWJfXeXR1zxz7aHF4u4CyH6vQ==
+<<<<<<< HEAD
   dependencies:
     graceful-fs "^4.1.11"
     micromatch "^3.1.10"
@@ -10186,6 +10193,38 @@ rechoir@^0.6.2:
   resolved "https://registry.yarnpkg.com/rechoir/-/rechoir-0.6.2.tgz#85204b54dba82d5742e28c96756ef43af50e3384"
   integrity sha1-hSBLVNuoLVdC4oyWdW70OvUOM4Q=
   dependencies:
+=======
+  dependencies:
+    graceful-fs "^4.1.11"
+    micromatch "^3.1.10"
+    readable-stream "^2.0.2"
+
+recast@^0.14.7:
+  version "0.14.7"
+  resolved "https://registry.yarnpkg.com/recast/-/recast-0.14.7.tgz#4f1497c2b5826d42a66e8e3c9d80c512983ff61d"
+  integrity sha512-/nwm9pkrcWagN40JeJhkPaRxiHXBRkXyRh/hgU088Z/v+qCy+zIHHY6bC6o7NaKAxPqtE6nD8zBH1LfU0/Wx6A==
+  dependencies:
+    ast-types "0.11.3"
+    esprima "~4.0.0"
+    private "~0.1.5"
+    source-map "~0.6.1"
+
+recast@^0.16.0:
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/recast/-/recast-0.16.2.tgz#3796ebad5fe49ed85473b479cd6df554ad725dc2"
+  integrity sha512-O/7qXi51DPjRVdbrpNzoBQH5dnAPQNbfoOFyRiUwreTMJfIHYOEBzwuH+c0+/BTSJ3CQyKs6ILSWXhESH6Op3A==
+  dependencies:
+    ast-types "0.11.7"
+    esprima "~4.0.0"
+    private "~0.1.5"
+    source-map "~0.6.1"
+
+rechoir@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/rechoir/-/rechoir-0.6.2.tgz#85204b54dba82d5742e28c96756ef43af50e3384"
+  integrity sha1-hSBLVNuoLVdC4oyWdW70OvUOM4Q=
+  dependencies:
+>>>>>>> 4dde761bb957c643aa5454c9e1227fd988e29396
     resolve "^1.1.6"
 
 recursive-readdir@2.2.1:
@@ -12041,6 +12080,7 @@ verror@1.10.0:
     extsprintf "^1.2.0"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 vertical-timeline-component-for-react@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/vertical-timeline-component-for-react/-/vertical-timeline-component-for-react-1.0.6.tgz#eba36af70f6568a4798599148aa8975ed8423de8"
@@ -12050,6 +12090,8 @@ vertical-timeline-component-for-react@^1.0.6:
     prop-types "^15.6.1"
     react-visibility-sensor "^5.0.2"
 =======
+=======
+>>>>>>> 4dde761bb957c643aa5454c9e1227fd988e29396
 vfile-message@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/vfile-message/-/vfile-message-1.1.1.tgz#5833ae078a1dfa2d96e9647886cd32993ab313e1"
@@ -12066,7 +12108,10 @@ vfile@^3.0.0, vfile@^3.0.1:
     replace-ext "1.0.0"
     unist-util-stringify-position "^1.0.0"
     vfile-message "^1.0.0"
+<<<<<<< HEAD
 >>>>>>> upgraded storybook to address webpack error
+=======
+>>>>>>> 4dde761bb957c643aa5454c9e1227fd988e29396
 
 vm-browserify@0.0.4:
   version "0.0.4"
