@@ -55,7 +55,7 @@ export class App extends React.Component <>{
     })
   }
 
-  render() {
+  render = () => {
     return (
       <Router>
         <div className="app container">
@@ -83,31 +83,3 @@ export class App extends React.Component <>{
     );
   }
 }
-// current
-// -develop "upcoming hangs" view
-// --calendar view?
-// --timeline view?
-// ------------------------
-// to do
-// -trello board
-// -add auth (twitter/facebook/gmail oauth2)
-// -split hangs btwn past/future
-// -make hang form more obvious
-// -work in auth
-// -host on heroku
-// -host on digital ocean
-// -generate calendar event
-// -send email reminder to reach out (sendgrid)
-// -send text reminder to reach out (twillio)
-// -events in your area
-// -log an unscheduled,occured hang
-// -reconsider how data is being displayed on friend/hangs page
-// working with response
-//
-// done
-// ------------------------
-// -desiredFrequency in NewFriendForm saving as string not integer X
-// -make sure dates are right X
-// -implemented router X
-// --only show most recent on friends view X
-// export default App;
