@@ -21,8 +21,7 @@ export default class NewHangForm extends React.Component<Props,State> {
   // https://stackoverflow.com/questions/33846813/typescript-how-to-check-tagname-in-eventtarget
   handleChange(event:KeyboardEvent):void {
     let element = event.target as HTMLInputElement
-    const newState = {};
-    let newState: object;
+    let newState: object = {};
     newState[element.tagName] = element.value;
     this.setState(newState);
   }
