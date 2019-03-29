@@ -74,7 +74,7 @@ export class App extends React.Component <>{
             render={(props)=>
               <div>
                 <PastHangsList friends={this.state.friends} hangs={this.state.hangs} handleCreateHang={this.handleCreateHang}/>
-                <UpcomingHangsList friends={this.state.friends} hangs={this.state.hangs} handleCreateHang={this.handleCreateHang}/>
+                <FutureHangsList friends={this.state.friends} hangs={this.state.hangs} handleCreateHang={this.handleCreateHang}/>
               </div>
             }
           />

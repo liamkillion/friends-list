@@ -21,10 +21,15 @@ export default class NewFriendForm extends React.Component<Props,State> {
   // https://stackoverflow.com/questions/28900077/why-is-event-target-not-element-in-typescript
   // https://stackoverflow.com/questions/12989741/the-property-value-does-not-exist-on-value-of-type-htmlelement
   // https://stackoverflow.com/questions/33846813/typescript-how-to-check-tagname-in-eventtarget
-  handleChange(event:KeyboardEvent):void {
+  // https://stackoverflow.com/questions/42081549/typescript-react-event-types?noredirect=1&lq=1
+  // https://stackoverflow.com/questions/28900077/why-is-event-target-not-element-in-typescript
+  handleChange(event:React.FormEvent<HTMLInputElement>):void {
     let element = event.target as HTMLInputElement
-    this.setState({ [element.tagName]: element.value });
+    let newState = {};
+    newState[element.tagName] = element.value;
+    this.setState(newState);
   }
+
 
   handleSubmit = event => {
     event.preventDefault();
