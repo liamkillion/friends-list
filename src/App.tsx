@@ -9,8 +9,10 @@ import {services} from "./services"
 import "./App.css";
 import handleCreateFunction from "./interfaces"
 
-export class App extends React.Component <>{
-  constructor(props) {
+interface Props = {}
+
+export class App extends React.Component <Props>{
+  constructor(props:Props) {
     super(props);
     this.state = {friends:[],hangs:[]}
   }
@@ -59,10 +61,12 @@ export class App extends React.Component <>{
     return (
       <Router>
         <div className="app container">
-          <Header userName={this.state.userName} />
+          <Header
+          // userName={this.state.userName} 
+          />
           <Route
             path="/"
-            render={ (props) =>
+            render={ () =>
               <div>
                 <FriendsList friends={this.state.friends} hangs={this.state.hangs} handleCreateHang={this.handleCreateHang}/>
                 <NewFriendForm handleCreateFriend={this.handleCreateFriend}/>
@@ -71,7 +75,7 @@ export class App extends React.Component <>{
           />
           <Route
             path="/hangs"
-            render={(props)=>
+            render={ ()=>
               <div>
                 <PastHangsList friends={this.state.friends} hangs={this.state.hangs} handleCreateHang={this.handleCreateHang}/>
                 <FutureHangsList friends={this.state.friends} hangs={this.state.hangs} handleCreateHang={this.handleCreateHang}/>

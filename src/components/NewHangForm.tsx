@@ -35,7 +35,7 @@ export default class NewHangForm extends React.Component<Props,State> {
     this.setState(newState);
   }
 
-  handleSubmit(e:MouseEvent):void {
+  handleSubmit(e:MouseEvent<HTMLButtonElement, MouseEvent>):void {
     e.preventDefault();
     this.props.handleCreateHang(this.state);
   };
@@ -43,10 +43,10 @@ export default class NewHangForm extends React.Component<Props,State> {
   render = () => {
     return(
       <form className="form-inline">
-        <label className="sr-only" for="date">Activity Date</label>
+        <label className="sr-only" htmlFor="date">Activity Date</label>
         <input onChange={this.handleChange} type="date" className="form-control" name="date"></input>
 
-        <label className="sr-only" for="activity">A short description of the activity</label>
+        <label className="sr-only" htmlFor="activity">A short description of the activity</label>
         <input onChange={this.handleChange} type="textarea" className="form-control" name="activity" placeholder="A short description of the activity "></input>
 
         <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
@@ -55,5 +55,5 @@ export default class NewHangForm extends React.Component<Props,State> {
 
   }
 }
-
+// spectacle
 // export default NewHangForm;

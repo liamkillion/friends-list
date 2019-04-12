@@ -1,9 +1,9 @@
 // import React from 'react'
 import * as React from 'react'
 import HangHistoryLineItem from './HangHistoryLineItem'
-import Hang from "../interfaces"
+import {Hang, Friend, handleCreateFunction} from "../interfaces"
 
-interface Props {hangs:Hang[]}
+interface Props {hangs:Hang[], friends: Friend[], handleCreateHang: handleCreateFunction}
 
 export default class PastHangsList extends React.Component<Props> {
   render () {
