@@ -7,7 +7,7 @@ import FutureHangsList from "./components/FutureHangsList";
 import NewFriendForm from "./components/NewFriendForm"
 import {services} from "./services"
 import "./App.css";
-import handleCreateFunction from "./interfaces"
+import { Friend, handleCreateFunction } from "./interfaces"
 
 interface Props = {}
 
@@ -36,7 +36,7 @@ export class App extends React.Component <Props>{
 
   let handleCreateFriend:handleCreateFunction;
   handleCreateFriend = function(hang:object): object {
-    services.friends.createNewFriend(friend).then(response=>{
+    services.friends.createNewFriend(friend:Friend).then(response=>{
       let friendsResponse=response
       this.setState({friends:friendsResponse})
     })
@@ -50,7 +50,7 @@ export class App extends React.Component <Props>{
   // }
 
   let handleCreateHang:handleCreateFunction;
-  handleCreateHang = function(hang:object): object {
+  handleCreateHang = function(hang:object): void {
     services.hangs.createNewHang(hang).then(response=>{
       let hangsResponse=response
       this.setState({hangs:hangsResponse})
@@ -62,7 +62,7 @@ export class App extends React.Component <Props>{
       <Router>
         <div className="app container">
           <Header
-          // userName={this.state.userName} 
+          // userName={this.state.userName}
           />
           <Route
             path="/"
