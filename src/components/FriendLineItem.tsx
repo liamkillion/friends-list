@@ -2,10 +2,11 @@
 import * as React from "react";
 import HangHistoryList from "../components/HangHistoryList";
 import Moment from "react-moment";
-import { Friend, handleCreateFunction } from "../interfaces";
+import { Friend, handleCreateFunction, Hang } from "../interfaces";
 
 interface Props {
   friend: Friend;
+  friendHangs: Hang[];
   handleCreateHang: handleCreateFunction;
 }
 

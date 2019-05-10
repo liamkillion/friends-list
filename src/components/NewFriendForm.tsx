@@ -1,6 +1,6 @@
 // import React from 'react'
 import * as React from "react";
-import handleCreateFunction from "../interfaces";
+import { handleCreateFunction } from "../interfaces";
 
 interface Props {
   handleCreateFriend: handleCreateFunction;
@@ -10,6 +10,7 @@ interface State {
   desiredFrequency: number;
   lastDateSeen: string;
   notes: string;
+  [x: string]: string | number | boolean;
 }
 
 // class NewFriendForm extends React.Component {
@@ -31,7 +32,7 @@ export default class NewFriendForm extends React.Component<Props, State> {
   // https://stackoverflow.com/questions/28900077/why-is-event-target-not-element-in-typescript
   handleChange(e: React.FormEvent<HTMLInputElement>): void {
     let element = e.target as HTMLInputElement;
-    let newState = {};
+    const newState: State = { ...this.state };
     newState[element.tagName] = element.value;
     this.setState(newState);
   }
