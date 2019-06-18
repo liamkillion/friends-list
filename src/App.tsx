@@ -15,7 +15,7 @@ interface State {
   hangs: Hang[];
 }
 
-export class App extends React.Component<Props, State> {
+export default class App extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = { friends: [], hangs: [] };
