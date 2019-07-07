@@ -3,11 +3,11 @@ import * as React from "react";
 // import PropTypes from 'prop-types'
 import { Friend, handleCreateFunction } from "../interfaces";
 
-interface Props {
+interface IProps {
   handleCreateHang: handleCreateFunction;
   friend: Friend;
 }
-interface State {
+interface IState {
   friend_id: number;
   date: string;
   activity: string;
@@ -15,8 +15,8 @@ interface State {
   [x: string]: string | number | boolean;
 }
 
-export default class NewHangForm extends React.Component<Props, State> {
-  constructor(props: Props) {
+export default class NewHangForm extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
     this.state = {
       friend_id: this.props.friend.id,

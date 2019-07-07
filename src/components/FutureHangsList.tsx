@@ -3,13 +3,13 @@ import * as React from "react";
 import HangHistoryLineItem from "./HangHistoryLineItem";
 import { Hang, Friend, handleCreateFunction } from "../interfaces";
 
-interface Props {
+interface IProps {
   hangs: Hang[];
   friends: Friend[];
   handleCreateHang: handleCreateFunction;
 }
 
-export default class FutureHangsList extends React.Component<Props> {
+export default class FutureHangsList extends React.Component<IProps> {
   render() {
     const orderedHangs = this.props.hangs.sort((a: Hang, b: Hang) =>
       a.date > b.date ? 1 : b.date > a.date ? -1 : 0

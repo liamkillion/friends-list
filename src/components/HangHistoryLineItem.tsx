@@ -6,30 +6,23 @@ import { FaCalendarCheck, FaRegCalendarTimes } from "react-icons/fa";
 import { Hang } from "../interfaces";
 
 // interface Hang { date: string; activity: string; didHang: boolean }
-interface Props {
+interface IProps {
   hang: Hang;
 }
 
-// class HangHistoryLineItem extends React.Component {
-export default class HangHistoryLineItem extends React.Component<Props> {
-  render() {
-    return (
-      <li className="list-group-item">
-        <p>
-          Date: <Moment format="MM/DD/YY">{this.props.hang.date}</Moment>
-        </p>
-        <p>Activity: {this.props.hang.activity}</p>
-        <p>
-          Did you meet up?{" "}
-          {this.props.hang.didHang ? (
-            <FaCalendarCheck />
-          ) : (
-            <FaRegCalendarTimes />
-          )}
-        </p>
-      </li>
-    );
-  }
-}
+const HangHistoryLineItem: React.StatelessComponent<IProps> = () => {
+  return (
+    <li className="list-group-item">
+      <p>
+        Date: <Moment format="MM/DD/YY">{this.props.hang.date}</Moment>
+      </p>
+      <p>Activity: {this.props.hang.activity}</p>
+      <p>
+        Did you meet up?{" "}
+        {this.props.hang.didHang ? <FaCalendarCheck /> : <FaRegCalendarTimes />}
+      </p>
+    </li>
+  );
+};
 
-// export default HangHistoryLineItem;
+export default HangHistoryLineItem;

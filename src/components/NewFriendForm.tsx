@@ -1,11 +1,10 @@
-// import React from 'react'
 import * as React from "react";
 import { handleCreateFunction } from "../interfaces";
 
-interface Props {
+interface IProps {
   handleCreateFriend: handleCreateFunction;
 }
-interface State {
+interface IState {
   name: string;
   desiredFrequency: number;
   lastDateSeen: string;
@@ -14,8 +13,8 @@ interface State {
 }
 
 // class NewFriendForm extends React.Component {
-export default class NewFriendForm extends React.Component<Props, State> {
-  constructor(props: Props) {
+export default class NewFriendForm extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
     this.state = {
       name: "",
