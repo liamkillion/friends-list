@@ -33,7 +33,7 @@ export default class NewHangForm extends React.Component<IProps, IState> {
   // https://stackoverflow.com/questions/28900077/why-is-event-target-not-element-in-typescript
   handleChange(event: React.FormEvent<HTMLInputElement>): void {
     let element = event.target as HTMLInputElement;
-    const newState: State = { ...this.state };
+    const newState: IState = { ...this.state };
     newState[element.tagName] = element.value;
     this.setState(newState);
   }

@@ -9,14 +9,14 @@ import { Friend, handleCreateFunction, Hang } from "./interfaces";
 import { services } from "./services";
 import "./App.css";
 
-interface Props {}
-interface State {
+interface IProps {}
+interface IState {
   friends: Friend[];
   hangs: Hang[];
 }
 
-class App extends React.Component<Props, State> {
-  constructor(props: Props) {
+class App extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
     this.state = { friends: [], hangs: [] };
   }
