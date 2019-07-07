@@ -1,16 +1,13 @@
-// import React from "react";
 import * as React from "react";
 import FriendLineItem from "./FriendLineItem";
 import { Hang, Friend, handleCreateFunction } from "../interfaces";
-// interface Hang { date: string; activity: string; didHang: boolean; friend_id: integer }
-// interface Friend { name: string; frequency: integer; id: integer; hangs: Hang[] };
+
 interface IProps {
   friends: Friend[];
   hangs: Hang[];
   handleCreateHang: handleCreateFunction;
 }
 
-// class FriendsList extends React.Component {
 export default class FriendsList extends React.Component<IProps> {
   render() {
     const friendsList = this.props.friends.map(friend => {
@@ -25,8 +22,10 @@ export default class FriendsList extends React.Component<IProps> {
         />
       );
     });
-    return <div className="friendsList">{friendsList}</div>;
+    return (
+      <div className="friendsList">
+        <ul>{friendsList}</ul>
+      </div>
+    );
   }
 }
-
-// export default FriendsList;
