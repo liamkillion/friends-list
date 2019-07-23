@@ -13,6 +13,7 @@ interface IProps {
 // class FriendLineItem extends React.Component {
 export default class FriendLineItem extends React.Component<IProps> {
   render() {
+    console.log(this.props.friend);
     return (
       <li className="list-group-item">
         <div className="card">
@@ -41,6 +42,7 @@ export default class FriendLineItem extends React.Component<IProps> {
           </div>
           <div className="card-footer">
             <HangHistoryList
+              friendHangs={this.props.friendHangs}
               handleCreateHang={this.props.handleCreateHang}
               friend={this.props.friend}
             />

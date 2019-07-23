@@ -6,14 +6,13 @@ import { Hang, Friend, handleCreateFunction } from "../interfaces";
 
 interface IProps {
   handleCreateHang: handleCreateFunction;
+  friendHangs: Hang[];
   friend: Friend;
 }
 
 export default class HangHistoryList extends React.Component<IProps> {
   render() {
-    let friendHangs = this.props.friend.relationships.hangs.data;
-    console.log(friendHangs);
-
+    let friendHangs = this.props.friendHangs;
     let orderedHangs = friendHangs.sort((a: Hang, b: Hang) =>
       a.date > b.date ? 1 : b.date > a.date ? -1 : 0
     );
