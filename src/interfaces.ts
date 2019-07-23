@@ -7,12 +7,17 @@ export interface Hang {
   didHang: boolean;
 }
 export interface Friend {
-  name: string;
-  desiredFrequency: number;
   id: number;
-  lastDateSeen: string;
-  hangs: Hang[];
-  notes: string;
+  type: string;
+  attributes: {
+    name: string;
+    desiredFrequency: number;
+    id: number;
+    lastDateSeen: string;
+    hangs: Hang[];
+    notes: string;
+  };
+  relationships: Hang[];
 }
 // https://www.typescriptlang.org/docs/handbook/interfaces.html#function-types
 export interface handleCreateFunction {

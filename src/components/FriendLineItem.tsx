@@ -13,31 +13,33 @@ interface IProps {
 // class FriendLineItem extends React.Component {
 export default class FriendLineItem extends React.Component<IProps> {
   render() {
-    console.log(this.props.friend);
     return (
       <li className="list-group-item">
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title"> {this.props.friend.name} </h5>
+            <h5 className="card-title">
+              {" "}
+              {this.props.friend.attributes.name}{" "}
+            </h5>
             <p className="card-text">
               {" "}
               You should schedule something with them by:{" "}
               {
                 <Moment
-                  add={{ days: this.props.friend.desiredFrequency }}
+                  add={{ days: this.props.friend.attributes.desiredFrequency }}
                   format="MM/DD/YY"
                 >
-                  {this.props.friend.lastDateSeen}
+                  {this.props.friend.attributes.lastDateSeen}
                 </Moment>
               }
             </p>
             <p className="card-text">
               {" "}
-              Suggested plans: {this.props.friend.name} likes{" "}
-              {this.props.friend.notes}{" "}
+              Suggested plans: {this.props.friend.attributes.name} likes{" "}
+              {this.props.friend.attributes.notes}{" "}
             </p>
             <p className="card-text">
-              Most Recent Past Hang with {this.props.friend.name}:
+              Most Recent Past Hang with {this.props.friend.attributes.name}:
             </p>
           </div>
           <div className="card-footer">
