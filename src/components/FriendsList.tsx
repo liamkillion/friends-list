@@ -13,9 +13,10 @@ export default class FriendsList extends React.Component<IProps> {
     console.log(this.props.hangs);
     console.log(this.props.friends);
     const friendsList = this.props.friends.map(friend => {
-      let friendHangs = this.props.hangs.filter(
-        hang => hang.friend_id === friend.id
+      const friendHangs = this.props.hangs.filter(
+        hang => hang.attributes.friend_id == friend.id
       );
+
       return (
         <FriendLineItem
           friendHangs={friendHangs}

@@ -1,10 +1,16 @@
 // https://stackoverflow.com/questions/37263357/how-to-declare-and-import-typescript-interfaces-in-a-separate-file
 export interface Hang {
   id: number;
-  friend_id: number;
-  date: string;
-  activity: string;
-  didHang: boolean;
+  type: string;
+  attributes: {
+    friend_id: number;
+    date: string;
+    activity: string;
+    didHang: boolean;
+  };
+  relationships: {
+    friend: Friend;
+  };
 }
 export interface Friend {
   id: number;
@@ -14,7 +20,6 @@ export interface Friend {
     desiredFrequency: number;
     id: number;
     lastDateSeen: string;
-    hangs: Hang[];
     notes: string;
   };
   relationships: Hang[];

@@ -27,7 +27,7 @@ class App extends React.Component<IProps, IState> {
       this.setState({ friends: response["data"] });
     });
     services.hangs.getHangs().then(response => {
-      this.setState({ hangs: response });
+      this.setState({ hangs: response["data"] });
     });
   }
 

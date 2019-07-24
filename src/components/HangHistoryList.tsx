@@ -14,11 +14,15 @@ export default class HangHistoryList extends React.Component<IProps> {
   render() {
     let friendHangs = this.props.friendHangs;
     let orderedHangs = friendHangs.sort((a: Hang, b: Hang) =>
-      a.date > b.date ? 1 : b.date > a.date ? -1 : 0
+      a.attributes.date > b.attributes.date
+        ? 1
+        : b.attributes.date > a.attributes.date
+        ? -1
+        : 0
     );
 
     let historicOrderedHangs = orderedHangs.filter(
-      hang => new Date(hang.date) < new Date(Date.now())
+      hang => new Date(hang.attributes.date) < new Date(Date.now())
     );
 
     const hangsList = historicOrderedHangs.map(hang => {
