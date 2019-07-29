@@ -28,6 +28,7 @@ export default class HangHistoryList extends React.Component<IProps> {
     const hangsList = historicOrderedHangs.map(hang => {
       return <HangHistoryLineItem hang={hang} />;
     });
+
     return (
       <div>
         <ul className="hangList list-group">{hangsList}</ul>

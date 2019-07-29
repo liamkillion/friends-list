@@ -26,22 +26,18 @@ export default class NewHangForm extends React.Component<IProps, IState> {
     };
   }
 
-  // https://stackoverflow.com/questions/28900077/why-is-event-target-not-element-in-typescript
-  // https://stackoverflow.com/questions/12989741/the-property-value-does-not-exist-on-value-of-type-htmlelement
-  // https://stackoverflow.com/questions/33846813/typescript-how-to-check-tagname-in-eventtarget
-  // https://stackoverflow.com/questions/42081549/typescript-react-event-types?noredirect=1&lq=1
-  // https://stackoverflow.com/questions/28900077/why-is-event-target-not-element-in-typescript
-  handleChange(event: React.FormEvent<HTMLInputElement>): void {
-    let element = event.target as HTMLInputElement;
-    const newState: IState = { ...this.state };
-    newState[element.tagName] = element.value;
+  handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = event.target.value;
+    const newState = { ...this.state };
+    const tagName = event.target.tagName;
+    newState[tagName] = newValue;
     this.setState(newState);
-  }
+  };
 
-  handleSubmit(e: React.MouseEvent<HTMLButtonElement>): void {
-    e.preventDefault();
+  handleSubmit = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
     this.props.handleCreateHang(this.state);
-  }
+  };
 
   render = () => {
     return (
@@ -78,5 +74,3 @@ export default class NewHangForm extends React.Component<IProps, IState> {
     );
   };
 }
-// spectacle
-// export default NewHangForm;

@@ -1,4 +1,3 @@
-// import React from 'react'
 import * as React from "react";
 import HangHistoryList from "../components/HangHistoryList";
 import Moment from "react-moment";
@@ -10,7 +9,6 @@ interface IProps {
   handleCreateHang: handleCreateFunction;
 }
 
-// class FriendLineItem extends React.Component {
 export default class FriendLineItem extends React.Component<IProps> {
   render() {
     return (
@@ -54,5 +52,3 @@ export default class FriendLineItem extends React.Component<IProps> {
     );
   }
 }
-
-// export default FriendLineItem;

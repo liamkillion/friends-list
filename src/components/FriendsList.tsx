@@ -10,13 +10,10 @@ interface IProps {
 
 export default class FriendsList extends React.Component<IProps> {
   render() {
-    console.log(this.props.hangs);
-    console.log(this.props.friends);
     const friendsList = this.props.friends.map(friend => {
       const friendHangs = this.props.hangs.filter(
-        hang => hang.attributes.friend_id == friend.id
+        hang => hang.attributes.friend_id === friend.id
       );
-
       return (
         <FriendLineItem
           friendHangs={friendHangs}
@@ -26,7 +23,6 @@ export default class FriendsList extends React.Component<IProps> {
       );
     });
 
-    console.log(this.props.friends);
     return (
       <div className="friendsList">
         <ul>{friendsList}</ul>
