@@ -31,22 +31,23 @@ class App extends React.Component<IProps, IState> {
     });
   }
 
-  // let handleCreateFriend:handleCreateFunction;
   handleCreateFriend: handleCreateFunction = friend => {
     return services.friends.createNewFriend(friend).then(response => {
       let friendsResponse = response;
-      this.setState({ friends: friendsResponse });
+      this.setState({ friends: friendsResponse["data"] });
     });
   };
 
   handleCreateHang: handleCreateFunction = hang => {
     return services.hangs.createNewHang(hang).then(response => {
       let hangsResponse = response;
-      this.setState({ hangs: hangsResponse });
+      this.setState({ hangs: hangsResponse["data"] });
     });
   };
 
   public render() {
+    console.log("at app level");
+    console.log(this.state.hangs);
     return (
       <Router>
         <div className="app container">
