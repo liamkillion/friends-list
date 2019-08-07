@@ -1,4 +1,5 @@
 import * as React from "react";
+import Calendar from "react-calendar";
 import { handleCreateFunction } from "../interfaces";
 
 interface IProps {
@@ -24,11 +25,6 @@ export default class NewFriendForm extends React.Component<IProps, IState> {
     };
   }
 
-  // https://stackoverflow.com/questions/28900077/why-is-event-target-not-element-in-typescript
-  // https://stackoverflow.com/questions/12989741/the-property-value-does-not-exist-on-value-of-type-htmlelement
-  // https://stackoverflow.com/questions/33846813/typescript-how-to-check-tagname-in-eventtarget
-  // https://stackoverflow.com/questions/42081549/typescript-react-event-types?noredirect=1&lq=1
-  // https://stackoverflow.com/questions/28900077/why-is-event-target-not-element-in-typescript
   handleChange(e: React.FormEvent<HTMLInputElement>): void {
     let element = e.target as HTMLInputElement;
     const newState: IState = { ...this.state };
@@ -73,9 +69,8 @@ export default class NewFriendForm extends React.Component<IProps, IState> {
           <label className="sr-only" htmlFor="lastDateSeen">
             Last Seen
           </label>
-          <input
+          <Calendar
             onChange={this.handleChange}
-            type="date"
             className="form-control"
             name="lastDateSeen"
           />
