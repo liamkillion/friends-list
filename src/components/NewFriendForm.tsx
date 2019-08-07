@@ -32,6 +32,13 @@ export default class NewFriendForm extends React.Component<IProps, IState> {
     this.setState(newState);
   }
 
+  handleDateChange(date: Date | Date[]): void {
+    if (date instanceof Array) {
+      date = date[0];
+    }
+    this.setState({ lastDateSeen: date.toISOString() });
+  }
+
   handleSubmit(e: React.MouseEvent<HTMLButtonElement>): void {
     e.preventDefault();
     this.props.handleCreateFriend(this.state);
@@ -69,11 +76,7 @@ export default class NewFriendForm extends React.Component<IProps, IState> {
           <label className="sr-only" htmlFor="lastDateSeen">
             Last Seen
           </label>
-          <Calendar
-            onChange={this.handleChange}
-            className="form-control"
-            name="lastDateSeen"
-          />
+          <Calendar onChange={this.handleDateChange} className="form-control" />
 
           <label className="sr-only" htmlFor="notes">
             Likes/Dislikes
