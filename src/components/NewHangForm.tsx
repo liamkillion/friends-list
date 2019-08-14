@@ -8,7 +8,7 @@ interface IProps {
 }
 interface IState {
   friend_id: number;
-  date: Date;
+  date: string;
   activity: string;
   didHang: boolean;
   [x: string]: string | number | boolean;
@@ -25,21 +25,23 @@ export default class NewHangForm extends React.Component<IProps, IState> {
     };
   }
 
-  // handleChange(e: React.FormEvent<HTMLInputElement>): void {
-  //   let element = e.target as HTMLInputElement;
-  //   const newState: IState = { ...this.state };
-  //   newState[element.tagName] = element.value;
-  //   this.setState(newState);
-  // }
-  handleChange(date: Date): void {
+  handleChange(e: React.FormEvent<HTMLInputElement>): void {
+    let element = e.target as HTMLInputElement;
     const newState: IState = { ...this.state };
-    newState["date"] = date;
+    newState[element.tagName] = element.value;
     this.setState(newState);
+  }
+
+  handleDateChange(date: Date | Date[]): void {
+    if (date instanceof Array) {
+      date = date[0];
+    }
+    this.setState({ lastDateSeen: date.toISOString() });
   }
 
   handleSubmit(e: React.MouseEvent<HTMLButtonElement>): void {
     e.preventDefault();
-    this.props.handleCreateFriend(this.state);
+    this.props.handleCreateHang(this.state);
   }
 
   render = () => {
@@ -48,13 +50,7 @@ export default class NewHangForm extends React.Component<IProps, IState> {
         <label className="sr-only" htmlFor="date">
           Activity Date
         </label>
-        <Calendar
-          onChange={this.handleChange}
-          className="form-control"
-          name="date"
-          value={this.state.date}
-        />
-
+        <Calendar onChange={this.handleDateChange} className="form-control" />
         <label className="sr-only" htmlFor="activity">
           A short description of the activity
         </label>

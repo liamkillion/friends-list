@@ -46,8 +46,6 @@ class App extends React.Component<IProps, IState> {
   };
 
   public render() {
-    console.log("at app level");
-    console.log(this.state.hangs);
     return (
       <Router>
         <div className="app container">

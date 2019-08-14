@@ -13,7 +13,6 @@ interface IState {
   [x: string]: string | number | boolean;
 }
 
-// class NewFriendForm extends React.Component {
 export default class NewFriendForm extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
