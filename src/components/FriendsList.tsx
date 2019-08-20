@@ -11,10 +11,9 @@ interface IProps {
 export default class FriendsList extends React.Component<IProps> {
   render() {
     let friendsList = [];
-    console.log(this.props.hangs);
     friendsList = this.props.friends.map(friend => {
       const friendHangs = this.props.hangs.filter(
-        hang => hang.attributes.friend_id === friend.id
+        hang => hang.attributes.friend_id === friend.attributes.id
       );
       return (
         <FriendLineItem

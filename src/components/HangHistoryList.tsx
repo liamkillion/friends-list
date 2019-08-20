@@ -30,7 +30,7 @@ export default class HangHistoryList extends React.Component<IProps> {
 
     return (
       <div>
-        <ul className="hangList list-group">{hangsList}</ul>
+        <ul className="hangList list-group">{hangsList[0]}</ul>
         <h5>Schedule an hang with this friend!</h5>
         <NewHangForm
           handleCreateHang={this.props.handleCreateHang}

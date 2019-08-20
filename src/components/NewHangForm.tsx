@@ -50,7 +50,11 @@ export default class NewHangForm extends React.Component<IProps, IState> {
         <label className="sr-only" htmlFor="date">
           Activity Date
         </label>
-        <Calendar onChange={this.handleDateChange} className="form-control" />
+        <Calendar
+          minDate={new Date()}
+          onChange={this.handleDateChange}
+          className="form-control"
+        />
         <label className="sr-only" htmlFor="activity">
           A short description of the activity
         </label>

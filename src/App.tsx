@@ -4,7 +4,7 @@ import FriendsList from "./components/FriendsList";
 import PastHangsList from "./components/PastHangsList";
 import FutureHangsList from "./components/FutureHangsList";
 import NewFriendForm from "./components/NewFriendForm";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Switch, Route, Link } from "react-router-dom";
 import { Friend, handleCreateFunction, Hang } from "./interfaces";
 import { services } from "./services";
 import "./App.css";
@@ -47,12 +47,13 @@ class App extends React.Component<IProps, IState> {
 
   public render() {
     return (
-      <Router>
+      <Switch>
         <div className="app container">
           <Header
           // userName={this.state.userName}
           />
           <Route
+            exact
             path="/"
             render={() => (
               <div>
@@ -83,7 +84,7 @@ class App extends React.Component<IProps, IState> {
             )}
           />
         </div>
-      </Router>
+      </Switch>
     );
   }
 }

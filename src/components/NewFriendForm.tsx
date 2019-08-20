@@ -49,36 +49,39 @@ export default class NewFriendForm extends React.Component<IProps, IState> {
         <h5>Add a new friend</h5>
         <form className="form-inline">
           <label className="sr-only" htmlFor="name">
-            Friend's Name
+            Friend's Name:
           </label>
           <input
             onChange={this.handleChange}
             type="text"
             className="form-control"
             name="name"
-            placeholder="Friend's Name"
+            placeholder="e.g. Dogmeat"
             value={this.state.name}
           />
 
           <label className="sr-only" htmlFor="desiredFrequency">
-            Desired Frequency
+            Desired Frequency in days:
           </label>
           <input
             onChange={this.handleChange}
             type="number"
             className="form-control"
             name="desiredFrequency"
-            placeholder="Desired Frequency"
             value={this.state.desiredFrequency}
           />
 
           <label className="sr-only" htmlFor="lastDateSeen">
-            Last Seen
+            Last Seen:
           </label>
-          <Calendar onChange={this.handleDateChange} className="form-control" />
+          <Calendar
+            maxDate={new Date()}
+            onChange={this.handleDateChange}
+            className="form-control"
+          />
 
           <label className="sr-only" htmlFor="notes">
-            Likes/Dislikes
+            What does this person like to do:
           </label>
           <input
             onChange={this.handleChange}
@@ -86,7 +89,7 @@ export default class NewFriendForm extends React.Component<IProps, IState> {
             className="form-control"
             name="notes"
             value={this.state.notes}
-            placeholder="Friend's Likes/Dislikes"
+            placeholder='e.g. "to see movies"'
           />
 
           <button
