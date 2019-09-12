@@ -54,6 +54,15 @@ class App extends React.Component<IProps, IState> {
           />
           <Route
             exact
+            path="/signup"
+            render={() => (
+              <div>
+                <SignUpForm />
+              </div>
+            )}
+          />
+          <Route
+            exact
             path="/"
             render={() => (
               <div>
@@ -90,3 +99,18 @@ class App extends React.Component<IProps, IState> {
 }
 
 export default App;
+// pop out calendar
+// make pretty
+// auth/oauth
+// new routes
+// user m/c
+// user model has friends, email, id, token, hopefully no password, 2FA,
+// rewrite calls to backend
+// https://github.com/thoughtbot/clearance
+// https://github.com/plataformatec/devise
+// https://guides.railsgirls.com/devise
+// https://github.com/doorkeeper-gem/doorkeeper
+// https://github.com/omniauth/omniauth
+// https://github.com/mbleigh/omniauth-jwt
+// https://jwt.io/introduction/
+// https://reacttraining.com/react-router/core/api/Route

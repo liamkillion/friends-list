@@ -78,6 +78,28 @@ const deleteHang = hangId => {
   }).then(res => res.json());
 }
 
+const getRegistration = () => {
+  return fetch(`${API_ROOT}/users/sign_up`, {
+    method: "GET",
+    headers: getHeaders()
+  })
+}
+
+const postRegistration = () => {
+
+}
+
+const getLogin = () => {
+  return fetch(`${API_ROOT}/users/sessions`.{
+    method: "GET",
+    headers: getHeaders()
+  })
+}
+
+const postLogin = () => {
+
+}
+
 
 
 export const services = {
