@@ -10,7 +10,7 @@ interface IState {
   password: string;
 }
 
-export default class SignUpForm extends React.Component<IProps, IState> {
+export default class LogInForm extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
@@ -59,7 +59,7 @@ export default class SignUpForm extends React.Component<IProps, IState> {
           className="btn btn-primary"
           onClick={this.handleSubmit}
         >
-          Get Started!
+          Log In
         </button>
       </form>
     );

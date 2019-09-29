@@ -4,6 +4,8 @@ import FriendsList from "./components/FriendsList";
 import PastHangsList from "./components/PastHangsList";
 import FutureHangsList from "./components/FutureHangsList";
 import NewFriendForm from "./components/NewFriendForm";
+import SignUpForm from "./components/SignUpForm";
+import LogInForm from "./components/LogInForm";
 import { BrowserRouter as Switch, Route, Link } from "react-router-dom";
 import { Friend, handleCreateFunction, Hang } from "./interfaces";
 import { services } from "./services";
@@ -31,6 +33,20 @@ class App extends React.Component<IProps, IState> {
     });
   }
 
+  handleCreateUser: handleCreateFunction = user => {
+    return services.users.createNewUser(user).then(response => {
+      let usersResponse = response;
+      this.setState({ users: usersResponse["data"] });
+    });
+  };
+
+  handleCreateSession: handleCreateFunction = session => {
+    return services.sessions.createNewSession(session).then(response => {
+      let sessionsResponse = response;
+      this.setState({ sessions: sessionsResponse["data"] });
+    });
+  };
+
   handleCreateFriend: handleCreateFunction = friend => {
     return services.friends.createNewFriend(friend).then(response => {
       let friendsResponse = response;
@@ -57,7 +73,16 @@ class App extends React.Component<IProps, IState> {
             path="/signup"
             render={() => (
               <div>
-                <SignUpForm />
+                <SignUpForm handleCreateUser={this.handleCreateUser} />
+              </div>
+            )}
+          />
+          <Route
+            exact
+            path="/login"
+            render={() => (
+              <div>
+                <LogInForm handleCreateSession={this.handleCreateSession} />
               </div>
             )}
           />

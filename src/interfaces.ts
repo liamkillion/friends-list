@@ -12,6 +12,7 @@ export interface Hang {
     friend: Friend;
   };
 }
+
 export interface Friend {
   id: number;
   type: string;
@@ -21,8 +22,22 @@ export interface Friend {
     id: number;
     lastDateSeen: string;
     notes: string;
+    user_id: number;
   };
   relationships: Hang[];
+}
+
+export interface User {
+  id: number;
+  type: string;
+  attributes: {
+    email: string;
+    encrypted_password: string;
+    username: string;
+    password: string;
+    avatar_url: string;
+  };
+  relationships: Friend[];
 }
 // https://www.typescriptlang.org/docs/handbook/interfaces.html#function-types
 export interface handleCreateFunction {

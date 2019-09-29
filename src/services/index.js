@@ -1,11 +1,11 @@
-const API_ROOT="http://localhost:3000/api/v1"
+const API_ROOT = "http://localhost:3000/api/v1";
 
 const getHeaders = () => {
   return {
     "Content-Type": "application/json",
     Accept: "application/json"
   };
-}
+};
 
 const getFriends = () => {
   return fetch(`${API_ROOT}/friends`, {
@@ -19,29 +19,29 @@ const getFriend = friendId => {
   }).then(res => res.json());
 };
 
-const createNewFriend = newFriend => {
-  debugger
+const createFriend = friend => {
+  debugger;
   return fetch(`${API_ROOT}/friends`, {
     method: "POST",
     headers: getHeaders(),
-    body: JSON.stringify(newFriend)
+    body: JSON.stringify(friend)
   }).then(res => res.json());
 };
 
-const editFriend = (friendId,friendAttributesToUpdate) => {
+const editFriend = (friendId, friendAttributesToUpdate) => {
   return fetch(`${API_ROOT}/friends/${friendId}`, {
     method: "PATCH",
     headers: getHeaders(),
     body: JSON.stringify(friendAttributesToUpdate)
   }).then(res => res.json());
-}
+};
 
 const deleteFriend = friendId => {
   return fetch(`${API_ROOT}/friends/${friendId}`, {
     method: "DELETE",
     headers: getHeaders()
   }).then(res => res.json());
-}
+};
 
 const getHangs = () => {
   return fetch(`${API_ROOT}/hangs`, {
@@ -55,66 +55,62 @@ const getHang = hangId => {
   }).then(res => res.json());
 };
 
-const createNewHang = newHang => {
+const createHang = hang => {
   return fetch(`${API_ROOT}/hangs`, {
     method: "POST",
     headers: getHeaders(),
-    body: JSON.stringify(newHang)
+    body: JSON.stringify(hang)
   }).then(res => res.json());
 };
 
-const editHang = (hangId,hangAttributesToUpdate) => {
+const editHang = (hangId, hangAttributesToUpdate) => {
   return fetch(`${API_ROOT}/hangs/${hangId}`, {
     method: "PATCH",
     headers: getHeaders(),
     body: JSON.stringify(hangAttributesToUpdate)
   }).then(res => res.json());
-}
+};
 
 const deleteHang = hangId => {
   return fetch(`${API_ROOT}/hangs/${hangId}`, {
     method: "DELETE",
     headers: getHeaders()
   }).then(res => res.json());
-}
+};
 
-const getRegistration = () => {
+const postRegistration = newUser => {
   return fetch(`${API_ROOT}/users/sign_up`, {
-    method: "GET",
-    headers: getHeaders()
-  })
-}
+    method: "POST",
+    headers: getHeaders(),
+    body: JSON.stringify(newUser)
+  }).then(res => res.json());
+};
 
-const postRegistration = () => {
-
-}
-
-const getLogin = () => {
-  return fetch(`${API_ROOT}/users/sessions`.{
-    method: "GET",
-    headers: getHeaders()
-  })
-}
-
-const postLogin = () => {
-
-}
-
-
+const postLogin = newSession => {
+  return fetch(`${API_ROOT}/users/sign_in`, {
+    method: "POST",
+    headers: getHeaders(),
+    body: JSON.stringify(newSession)
+  }).then(res => res.json());
+};
 
 export const services = {
-  friends:{
+  users: {
+    postRegistration,
+    postLogin
+  },
+  friends: {
     getFriends,
     getFriend,
-    createNewFriend,
+    createFriend,
     editFriend,
     deleteFriend
   },
-  hangs:{
+  hangs: {
     getHangs,
     getHang,
-    createNewHang,
+    createHang,
     editHang,
     deleteHang
   }
-}
+};
