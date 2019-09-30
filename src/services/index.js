@@ -78,26 +78,26 @@ const deleteHang = hangId => {
   }).then(res => res.json());
 };
 
-const postRegistration = newUser => {
+const createUser = user => {
   return fetch(`${API_ROOT}/users/sign_up`, {
     method: "POST",
     headers: getHeaders(),
-    body: JSON.stringify(newUser)
+    body: JSON.stringify(user)
   }).then(res => res.json());
 };
 
-const postLogin = newSession => {
+const createSession = session => {
   return fetch(`${API_ROOT}/users/sign_in`, {
     method: "POST",
     headers: getHeaders(),
-    body: JSON.stringify(newSession)
+    body: JSON.stringify(session)
   }).then(res => res.json());
 };
 
 export const services = {
   users: {
-    postRegistration,
-    postLogin
+    createUser,
+    createSession
   },
   friends: {
     getFriends,

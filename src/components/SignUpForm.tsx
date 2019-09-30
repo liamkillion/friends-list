@@ -20,7 +20,7 @@ export default class SignUpForm extends React.Component<IProps, IState> {
   }
 
   handleChange(e: React.FormEvent<HTMLInputElement>): void {
-    let element = e.target as HTMLInputElement;
+    let element = e3.target as HTMLInputElement;
     const newState: IState = { ...this.state };
     newState[element.tagName] = element.value;
     this.setState(newState);

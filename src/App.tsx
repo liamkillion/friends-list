@@ -7,7 +7,7 @@ import NewFriendForm from "./components/NewFriendForm";
 import SignUpForm from "./components/SignUpForm";
 import LogInForm from "./components/LogInForm";
 import { BrowserRouter as Switch, Route, Link } from "react-router-dom";
-import { Friend, handleCreateFunction, Hang } from "./interfaces";
+import { Friend, handleCreateFunction, Hang, User } from "./interfaces";
 import { services } from "./services";
 import "./App.css";
 
@@ -15,6 +15,7 @@ interface IProps {}
 interface IState {
   friends: Friend[];
   hangs: Hang[];
+  user: User;
 }
 
 class App extends React.Component<IProps, IState> {
@@ -34,14 +35,14 @@ class App extends React.Component<IProps, IState> {
   }
 
   handleCreateUser: handleCreateFunction = user => {
-    return services.users.createNewUser(user).then(response => {
+    return services.users.createUser(user).then(response => {
       let usersResponse = response;
       this.setState({ users: usersResponse["data"] });
     });
   };
 
   handleCreateSession: handleCreateFunction = session => {
-    return services.sessions.createNewSession(session).then(response => {
+    return services.sessions.createSession(session).then(response => {
       let sessionsResponse = response;
       this.setState({ sessions: sessionsResponse["data"] });
     });
