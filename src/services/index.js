@@ -7,6 +7,21 @@ const getHeaders = () => {
   };
 }
 
+const authenticateUser = authData => {
+  return fetch(`${API_ROOT}/user/token`, {
+    headers:getHeaders(),
+    method: "POST",
+    body: JSON.stringify(authData)
+  }).then(res=>res.json());
+}
+
+const getCurrentUser = jwt => {
+  return fetch(`${API_ROOT}/users/current`, {
+    headers:getHeaders(),
+    Authorization: 'Bearer ' + jwt
+  }).then(res=>res.json())
+}
+
 const getFriends = () => {
   return fetch(`${API_ROOT}/friends`, {
     headers: getHeaders()
